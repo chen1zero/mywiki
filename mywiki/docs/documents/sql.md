@@ -1,9 +1,7 @@
-## SQL语句执行顺序
+### SQL语句执行顺序
 
-#####
 ![sql-image-1](./images/sql-image-1.png)
 
-#####
 ![sql-image-2](./images/sql-image-2.png)
 
 ```sql
@@ -18,7 +16,8 @@ select m.prod_name, m.sale_price*0.5 as discount from milk_tea as m;
 
 
 
-### 字段拼接，遇到空值NULL结果直接为空
+### 字段拼接
+遇到空值NULL结果直接为空
 
 ```sql
 SELECT m.*, CONCAT(prod_name, net_w) AS 产品信息 FROM milk_tea AS m;
@@ -28,7 +27,7 @@ SELECT m.*, CONCAT(prod_name, '(', sale_price, ')') AS 产品信息 FROM milk_te
 
 
 
-### CONCAT_WS表示以相同的拼接符拼接，自动过滤空值,拼接后原空值字段内容仍空；参数第一个表示字符，后面表示要拼接的内容
+CONCAT_WS表示以相同的拼接符拼接，自动过滤空值,拼接后原空值字段内容仍空；参数第一个表示字符，后面表示要拼接的内容
 
 ```sql
 SELECT m.*, CONCAT_WS('是',prod_name,net_w,'单价',sale_price) AS 产品信息 FROM milk_tea AS m;
@@ -46,7 +45,8 @@ select sale_price from milk_tea;
 
 
 
-### 排序子句，对查询结果进行排序
+### 排序子句
+对查询结果进行排序
 
 ```sql
 SELECT * FROM milk_tea ORDER BY CONVERT(prod_name USING gbk);
@@ -63,7 +63,7 @@ select * from milk_tea where ifnull(sale_price, 15)=15;
 ```
 
 
-### 如果为空，就当成15进行计算，只是计算时不作为空值，实际表中空值并没有被填充; ifnull(expression, value) 检查表达式expression是否为空，如果为空则返回value
+如果为空，就当成15进行计算，只是计算时不作为空值，实际表中空值并没有被填充; ifnull(expression, value) 检查表达式expression是否为空，如果为空则返回value
 
 ```sql
 select * from milk_tea where IFNULL(sale_price,15)=15
@@ -72,7 +72,8 @@ SELECT * FROM milk_tea WHERE IFNULL(sale_price,0)*0.9<10;
 
 
 
-### between and 是包含边界值的，not between不包括边界值
+### between and 
+between and是包含边界值的，not between不包括边界值
 
 ```sql
 SELECT * FROM milk_tea WHERE in_price BETWEEN 5 AND 10;
@@ -90,7 +91,8 @@ select * from milk_tea where prod_name in ('奶茶', '薯片');
 
 
 
-### 模糊查询，通配符的使用,_代表一个字符，知道具体的位置；而%可以代表多个字符或者空字符，知道大概位置
+### 模糊查询
+通配符的使用,_代表一个字符，知道具体的位置；而%可以代表多个字符或者空字符，知道大概位置
 
 ```sql
 SELECT * FROM milk_tea WHERE prod_name LIKE '奶_';
@@ -102,9 +104,9 @@ SELECT * FROM milk_tea WHERE sale_price BETWEEN 5 AND 15 AND prod_name LIKE '薯
 
 
 
-### 聚合函数， count(1)和count(*)都包含null;
-
-### count(1)会统计包括null值的所有符合条件的字段的条数。count(*)将返回表格中所有存在的行的总数包括值为null的行
+### 聚合函数
+count(1)和count(*)都包含null;
+count(1)会统计包括null值的所有符合条件的字段的条数。count(*)将返回表格中所有存在的行的总数包括值为null的行
 
 ```sql
 SELECT COUNT(*) FROM milk_tea;
@@ -113,13 +115,13 @@ select * from milk_tea
 ```
 
 
-### count(列名)将返回表格中除去null以外的所有行的总数(有默认值的列也会被计入）
+count(列名)将返回表格中除去null以外的所有行的总数(有默认值的列也会被计入）
 
 ```sql
 SELECT COUNT(DISTINCT sale_price) FROM milk_tea; 
 ```
 
-### COUNT是唯一可以用*的聚合函数，不可以对多列进行计数.
+COUNT是唯一可以用*的聚合函数，不可以对多列进行计数.
 
 ```sql
 SELECT SUM(sale_price) FROM milk_tea;
@@ -133,21 +135,23 @@ SELECT COUNT(1), SUM(sale_price), MAX(sale_price), MIN(sale_price), AVG(sale_pri
 
 
 
-### 分组数据 GROUP BY,对聚合键先过滤再聚合,过滤行
+### GROUP BY
+对聚合键先过滤再聚合,过滤行
 
 ```sql
 SELECT net_w, SUM(sale_price) FROM milk_tea WHERE net_w IN ('100g','150g') GROUP BY net_w; 
 ```
+对聚合结果再次筛选得到分组，筛选组
 
-### 对聚合结果再次筛选得到分组，筛选组
+### HAVING
+用于筛选分组聚合后的数据，只能在GROUP BY子句之后使用
 
-### HAVING语句用于筛选分组聚合后的数据，只能在GROUP BY子句之后使用
+### limit offset
+ORDER BY  xxx Limit  1 Offset 4是最后一条筛选语句
 
-### ORDER BY  xxx Limit  1 Offset 4是最后一条筛选语句
+limit x,y            #跳过x条数据读取y条数据
 
-### limit x,y            #跳过x条数据读取y条数据
-
-### limit y offset x #跳过x条数据读取y条数据
+limit y offset x #跳过x条数据读取y条数据
 
 ```sql
 SELECT net_w, COUNT(*) 
@@ -162,7 +166,7 @@ ORDER BY net_w;
 
 ### 多表查询
 
-### 标量子查询，返回的是一个值
+标量子查询，返回的是一个值
 
 ```sql
 SELECT sale_price FROM milk_tea WHERE prod_name = '奶茶';
@@ -191,15 +195,15 @@ HAVING AVG(sale_price) > (SELECT sale_price
 
 
 
-### 关联子查询，嵌套在其他查询中的查询
+关联子查询，嵌套在其他查询中的查询
 
-### 不相关子查询
+不相关子查询
 
 ```sql
 SELECT prod_name FROM milk_tea WHERE sale_price=15;
 ```
 
-### 子查询结果为一列值时，可以作为不连续的取值放在IN条件中
+子查询结果为一列值时，可以作为不连续的取值放在IN条件中
 
 ```sql
 SELECT * 
@@ -210,7 +214,7 @@ WHERE m.prod_name IN (SELECT prod_name
 ```
 
 
-### 子查询结果为一个表，可以作为子表进行查询
+子查询结果为一个表，可以作为子表进行查询
 
 ```sql
 SELECT prod_name, type, sale_price FROM prod_info WHERE prod_name='抽纸';										
@@ -223,9 +227,9 @@ WHERE m.sale_price <=28;
 
 
 
-### #相关子查询（查询本部门最高工资的员工）
+相关子查询（查询本部门最高工资的员工）
 
-### #相关子查询的执行依赖于外部查询。多数情况下是子查询的WHERE子句中引用了外部查询的表。
+相关子查询的执行依赖于外部查询。多数情况下是子查询的WHERE子句中引用了外部查询的表。
 
 ```sql
 --方法一、通过不相关子查询实现，但是这种方式语句较多，具体有多少部分也未知
@@ -250,17 +254,10 @@ SELECT * FROM emp AS e WHERE sal > (SELECT AVERAGE(sal) FROM emp WHERE job = e.j
 
 ### 表联结
 
-### 内连接 INNER JOIN 返回交集数据行
-
-### left join(左联接) 返回包括左表中的所有记录和右表中联结字段相等的记录，右表中匹配不上的字段用空值填充
-
-### right join(右联接) 返回包括右表中的所有记录和左表中联结字段相等的记录，左表中匹配不上的字段空值填充
-
-### 左连接 LEFT JOIN 返回匹配上的左表所有行，右表中没匹配上的返回null
-
-### 右连接 RIGHT JOIN 返回匹配上的右表所有行，左表没匹配上的返回null
-
-### 全连接 FULL JOIN  返回有交集的行和所有左右表没匹配上的行null
+内连接 INNER JOIN 返回交集数据行
+左连接 LEFT JOIN 返回匹配上的左表所有行，右表中没匹配上的返回null
+右连接 RIGHT JOIN 返回匹配上的右表所有行，左表没匹配上的返回null
+全连接 FULL JOIN  返回有交集的行和所有左右表没匹配上的行null
 
 ```sql
 SELECT * FROM prod_info AS p;
@@ -277,9 +274,9 @@ ON p.supplier_id=s.supplier_id;
 
 
 
-### 组合查询UNION，多条SELECT语句用UNION联结起来，并且UNION有去重功能
-
-### 最终的表头与第一张表一致，同样的数据类型才能够合并成一张表
+### 组合查询UNION
+多条SELECT语句用UNION联结起来，并且UNION有去重功能
+最终的表头与第一张表一致，同样的数据类型才能够合并成一张表
 
 ```sql
 SELECT * FROM order_list AS l WHERE l.order_id LIKE '20190407%'
@@ -297,9 +294,7 @@ INSERT INTO prod_info VALUES(20003, '番茄味薯片', '乐事', '80g', '零食'
 INSERT INTO prod_info(prod_id, prod_name, brand, type) VALUES(30005, '芬达', '百事', '饮料');
 ```
 
-
-
-### 数据更新 ASC升序 DESC降序
+数据更新 ASC升序 DESC降序
 
 ```sql
 SELECT * FROM prod_info ORDER BY prod_id ASC;
@@ -310,11 +305,7 @@ WHERE class='零食';
 
 SELECT * FROM prod_info;
 ```
-
-
-
-
-### 数据删除
+数据删除
 
 ```sql
 delete from prod_info where prod_id='30005';
@@ -323,13 +314,14 @@ SELECT * FROM prod_info;
 DELETE FROM prod_info WHERE prod_name='抽纸'; #从表中删除一些数据
 
 DELETE FROM prod_info;
-#DELETE是可以带WHERE的,所以支持条件删除;而TRUNCATE只能删除整个表的内容
+DELETE是可以带WHERE的,所以支持条件删除;而TRUNCATE只能删除整个表的内容
 TRUNCATE TABLE prod_info;
 ```
 
 
 
-### 表操作-创建表  字段名，数据类型，属性（属性主要包括是否允许NULL，默认允许；默认值DEFAULT设置，必须是常数）
+### 表操作
+创建表  字段名，数据类型，属性（属性主要包括是否允许NULL，默认允许；默认值DEFAULT设置，必须是常数）
 
 ```sql
 CREATE TABLE pet1
@@ -358,9 +350,7 @@ VALUES('pupy', 'Shirley', 'dog', 'F', 20160901, 20210120);
 UPDATE pet1 SET name='pipy';
 ```
 
-
-
-### 复制表
+复制表
 
 ```sql
 CREATE TABLE pet5
@@ -370,9 +360,7 @@ create table pet5 as (select * from pet2);
 SELECT * FROM pet5;
 ```
 
-
-
-### 删除表
+删除表
 
 ```sql
 DROP TABLE pet5;
@@ -384,9 +372,7 @@ SELECT name, owner FROM pet2;
 SELECT * FROM pet5;
 ```
 
-
-
-### 修改表，对表结构的修改，对字段的增删操作,修改数据类型
+修改表，对表结构的修改，对字段的增删操作,修改数据类型
 
 ```sql
 ALTER TABLE pet5 ADD sex CHAR(1);
@@ -401,9 +387,7 @@ alter table pet5 modify column sex char(2);
 ALTER TABLE pet5 modify COLUMN sex char(5)
 ```
 
-
-
-### 对表进行更名
+对表进行更名
 
 ```sql
 RENAME TABLE pet5 TO pet6;
@@ -414,17 +398,18 @@ DROP TABLE pet6;
 
 
 
-### 视图本质上上是一个查询语句，是一个虚拟的不存在的表，它的内容是基于一个或多个表格的查询结果,修改视图会修改底层基表数据
+### 视图
+视图本质上上是一个查询语句，是一个虚拟的不存在的表，它的内容是基于一个或多个表格的查询结果,修改视图会修改底层基表数据
 
-### 视图是基于基表进行操作的，视图是每次查询时动态生成的虚拟表，不可以存储数据
+视图是基于基表进行操作的，视图是每次查询时动态生成的虚拟表，不可以存储数据
 
-### 视图可以简化复杂查询，如果要经常性地执行某项复杂查询，就可以基于这个复杂查询建立视图，以后查询此视图即可
+视图可以简化复杂查询，如果要经常性地执行某项复杂查询，就可以基于这个复杂查询建立视图，以后查询此视图即可
 
-### 如果创建的是只读视图可以提高数据安全性，给不同用户定制化显示数据
+如果创建的是只读视图可以提高数据安全性，给不同用户定制化显示数据
 
-### 可以像操作表一样操作视图，视图如果设置了条件语句插入数据时可能不显示，但基表总是显示修改的
+可以像操作表一样操作视图，视图如果设置了条件语句插入数据时可能不显示，但基表总是显示修改的
 
-### 视图添加了检测条件with check option后如果数据不满足视图的条件时插入会报错
+视图添加了检测条件with check option后如果数据不满足视图的条件时插入会报错
 
 ```sql
 SELECT * FROM pet2; #视图的基表
@@ -460,15 +445,16 @@ DROP VIEW pet_show;
 
 
 
-### 存储过程-实现模块化的程序设计，提高执行效率（定义时一次编译后续直接调用）
+### 存储过程
+实现模块化的程序设计，提高执行效率（定义时一次编译后续直接调用）
 
-### 定义一个没有返回值的存储过程，实现模糊查询操作
+定义一个没有返回值的存储过程，实现模糊查询操作
 
 ```sql
 SELECT * FROM pet2 WHERE name LIKE '%w%';
 ```
 
-### 定义存储过程，类似一个函数包含函数名和参数
+定义存储过程，类似一个函数包含函数名和参数
 
 ```sql
 CREATE PROCEDURE mypro01(name1 VARCHAR(10))
@@ -489,17 +475,13 @@ END IF;
 END;
 ```
 
-
-
-### 删除存储过程
+删除存储过程
 
 ```sql
 DROP PROCEDURE mypro01;
 DROP PROCEDURE MYPRO01;
 ```
-
-
-### 调用存储过程
+调用存储过程
 
 ```sql
 CALL mypro01(NULL);
@@ -509,11 +491,9 @@ CALL test(12);
 DROP PROCEDURE test;
 ```
 
+定义一个有返回值的存储过程
 
-
-### 定义一个有返回值的存储过程
-
-### IN表示输入参数，可以省略；OUT 表示输出参数，FOUND_ROWS()作用返回查询结果的条数
+IN表示输入参数，可以省略；OUT 表示输出参数，FOUND_ROWS()作用返回查询结果的条数
 
 ```sql
 CREATE PROCEDURE mypro02(IN name1 VARCHAR(10), OUT num int(3))
@@ -572,7 +552,7 @@ SELECT TRUNCATE(351.3253, -2); # 从小数点左第二位截断
 SELECT IF(10>5, '大', '小'); 
 ```
 
-### CASE WHEN 用法
+CASE WHEN 用法
 
 ```sql
 CASE
@@ -590,11 +570,11 @@ END;
 
 ### 事务Transaction
 
-### 事务是一个操作序列，该序列中的操作要么都做要么都不做，可以简化错误恢复使应用程序更加可靠
+事务是一个操作序列，该序列中的操作要么都做要么都不做，可以简化错误恢复使应用程序更加可靠
 
-### 事务必须具备的ACID特性：原子性(Atomicity) 一致性(Consistency) 隔离性(Isolation) 持久性(Durability)
+事务必须具备的ACID特性：原子性(Atomicity) 一致性(Consistency) 隔离性(Isolation) 持久性(Durability)
 
-### #原子性是说事务中的所有操作同时成功或者同时失败回滚；一致性基于原子性，隔离性是其他事务的提交结果是否对当前事务可见；持久性是说事务一旦提交，对数据所做的任何改变，都要记录到永久存储器里
+原子性是说事务中的所有操作同时成功或者同时失败回滚；一致性基于原子性，隔离性是其他事务的提交结果是否对当前事务可见；持久性是说事务一旦提交，对数据所做的任何改变，都要记录到永久存储器里
 
 ```sql
 -----------------sql使用事务保证转账安全--------------------------
@@ -626,19 +606,18 @@ COMMIT;
 ---在回滚和提交之前，数据库中的数据都是操作的缓存数据，而不是数据库中的真实数据
 ```
 
-### 事务并发问题
+事务并发问题
 
-### 1.脏读(Dirty read),另外一个事务读到了还未提交的数据
+1.脏读(Dirty read),另外一个事务读到了还未提交的数据
 
-### 2.不可重复读(Unrepeatableread),如果另一个事务对数据的修改已经提交，就会导致第一个事务两次读取到的结果不一样
+2.不可重复读(Unrepeatableread),如果另一个事务对数据的修改已经提交，就会导致第一个事务两次读取到的结果不一样
 
-### 3.幻读；另一个事务（新增和删除）插入了数据，导致第一个事务发现多了原本不存在的记录 
+3.幻读；另一个事务（新增和删除）插入了数据，导致第一个事务发现多了原本不存在的记录 
 
 
 
-### 事务隔离级别（解决事务并发问题）
-
-### #隔离级别从低到高依次为 READ UNCOMMITTED读未提交 ; READ COMMITTED读提交, REPEATABLE READ（可重复读，事务执行时基于快照默认级别，一般用这个）; SERIALIZABLE(串行化，事务执行时对数据加锁，其他事务无法访问或者修改数据，一般不用，性能最差)
+事务隔离级别（解决事务并发问题）
+隔离级别从低到高依次为 READ UNCOMMITTED读未提交 ; READ COMMITTED读提交, REPEATABLE READ（可重复读，事务执行时基于快照默认级别，一般用这个）; SERIALIZABLE(串行化，事务执行时对数据加锁，其他事务无法访问或者修改数据，一般不用，性能最差)
 
 ```sql
 --查看默认的事务隔离级别
@@ -652,7 +631,7 @@ START TRANSACTION;
 SELECT * from account WHERE id=1;
 ```
 
-### sql数据库表设计满足三大范式
+### sql数据库表设计的三大范式
 
 第一范式(确保每列保持原子性)
 
@@ -721,7 +700,7 @@ B+树叶⼦节点存储了所有数据并且进⾏了排序，并且叶⼦节点
 
 ③ 会降低表的增删改的效率，因为每次增删改索引需要进行动态维护，导致时间变长
 
-**一般你们会在什么情况下加索引**
+**一般会在什么情况下加索引**
 
 频繁作为查询条件的字段应该创建索引
 
@@ -733,10 +712,6 @@ B+树叶⼦节点存储了所有数据并且进⾏了排序，并且叶⼦节点
 
 通过explain查询sql执行计划，在要查询的语句前面加上explain plan for 
 
-**用过组合索引吗，是有序的吗**
-
-用过， 有序(最左原则)
-
 **什么情况下会使索引失效？**
 
 （1）like
@@ -745,7 +720,7 @@ B+树叶⼦节点存储了所有数据并且进⾏了排序，并且叶⼦节点
 
 （3）使用 关键字 in ，or ，null，!=
 
-**sql优化您们是怎么做的？**
+**sql优化怎么做**
 
 一.首先开启数据库慢查询日志，定位到查询效率比较低的sql , 找出对应的sql语句并进行分析
 
@@ -819,7 +794,7 @@ count(列名)只包括列名那一列，在统计结果的时候，会忽略列�
 
 
 
-#### 经典sql问题
+### 经典sql问题
 
 #### 每个分组中连续出现N次的问题
 
