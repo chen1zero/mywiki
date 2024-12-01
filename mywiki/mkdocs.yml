@@ -18,6 +18,7 @@ nav:
     - 排序算法: documents/algorithm.md
     - 数据结构: documents/datastructure.md
     - 计算机网络: documents/network.md
+    - leetcode: documents/leetcode.md
 - 备忘录:
     - 一些喜欢的时刻: memo/share.md
 
