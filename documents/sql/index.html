@@ -20,11 +20,14 @@
     
     
       
-        <title>sql - My Docs</title>
+        <title>sql - My Space</title>
       
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -53,16 +56,24 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
   
     
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#sql" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -76,7 +87,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="../.." title="My Space" class="md-header__button md-logo" aria-label="My Space" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -90,7 +101,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            My Docs
+            My Space
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -102,6 +113,8 @@
         </div>
       </div>
     </div>
+    
+      
     
     
     
@@ -168,13 +181,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="../.." title="My Space" class="md-nav__button md-logo" aria-label="My Space" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    My Docs
+    My Space
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -247,6 +260,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    sql
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -256,6 +280,567 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    SQL语句执行顺序
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL语句执行顺序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    字段拼接，遇到空值NULL结果直接为空
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concat_ws" class="md-nav__link">
+    CONCAT_WS表示以相同的拼接符拼接，自动过滤空值,拼接后原空值字段内容仍空；参数第一个表示字符，后面表示要拼接的内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    列中重复值去重
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    排序子句，对查询结果进行排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    空值处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-ifnullexpression-value-expressionvalue" class="md-nav__link">
+    如果为空，就当成15进行计算，只是计算时不作为空值，实际表中空值并没有被填充; ifnull(expression, value) 检查表达式expression是否为空，如果为空则返回value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#between-and-not-between" class="md-nav__link">
+    between and 是包含边界值的，not between不包括边界值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_" class="md-nav__link">
+    模糊查询，通配符的使用,_代表一个字符，知道具体的位置；而%可以代表多个字符或者空字符，知道大概位置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count1countnull" class="md-nav__link">
+    聚合函数， count(1)和count(*)都包含null;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count1nullcountnull" class="md-nav__link">
+    count(1)会统计包括null值的所有符合条件的字段的条数。count(*)将返回表格中所有存在的行的总数包括值为null的行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countnull" class="md-nav__link">
+    count(列名)将返回表格中除去null以外的所有行的总数(有默认值的列也会被计入）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    COUNT是唯一可以用*的聚合函数，不可以对多列进行计数.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-by" class="md-nav__link">
+    分组数据 GROUP BY,对聚合键先过滤再聚合,过滤行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    对聚合结果再次筛选得到分组，筛选组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#havinggroup-by" class="md-nav__link">
+    HAVING语句用于筛选分组聚合后的数据，只能在GROUP BY子句之后使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-by-xxx-limit-1-offset-4" class="md-nav__link">
+    ORDER BY  xxx Limit  1 Offset 4是最后一条筛选语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-xy-xy" class="md-nav__link">
+    limit x,y            #跳过x条数据读取y条数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-y-offset-x-xy" class="md-nav__link">
+    limit y offset x #跳过x条数据读取y条数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    多表查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    标量子查询，返回的是一个值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    关联子查询，嵌套在其他查询中的查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    不相关子查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in" class="md-nav__link">
+    子查询结果为一列值时，可以作为不连续的取值放在IN条件中
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    子查询结果为一个表，可以作为子表进行查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    #相关子查询（查询本部门最高工资的员工）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where" class="md-nav__link">
+    #相关子查询的执行依赖于外部查询。多数情况下是子查询的WHERE子句中引用了外部查询的表。
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    表联结
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inner-join" class="md-nav__link">
+    内连接 INNER JOIN 返回交集数据行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#left-join" class="md-nav__link">
+    left join(左联接) 返回包括左表中的所有记录和右表中联结字段相等的记录，右表中匹配不上的字段用空值填充
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#right-join" class="md-nav__link">
+    right join(右联接) 返回包括右表中的所有记录和左表中联结字段相等的记录，左表中匹配不上的字段空值填充
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#left-join-null" class="md-nav__link">
+    左连接 LEFT JOIN 返回匹配上的左表所有行，右表中没匹配上的返回null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#right-join-null" class="md-nav__link">
+    右连接 RIGHT JOIN 返回匹配上的右表所有行，左表没匹配上的返回null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-join-null" class="md-nav__link">
+    全连接 FULL JOIN  返回有交集的行和所有左右表没匹配上的行null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unionselectunionunion" class="md-nav__link">
+    组合查询UNION，多条SELECT语句用UNION联结起来，并且UNION有去重功能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    最终的表头与第一张表一致，同样的数据类型才能够合并成一张表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    对关系型数据表的增删改
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asc-desc" class="md-nav__link">
+    数据更新 ASC升序 DESC降序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    数据删除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-nulldefault" class="md-nav__link">
+    表操作-创建表  字段名，数据类型，属性（属性主要包括是否允许NULL，默认允许；默认值DEFAULT设置，必须是常数）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    复制表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    删除表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    修改表，对表结构的修改，对字段的增删操作,修改数据类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    对表进行更名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    视图本质上上是一个查询语句，是一个虚拟的不存在的表，它的内容是基于一个或多个表格的查询结果,修改视图会修改底层基表数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    视图是基于基表进行操作的，视图是每次查询时动态生成的虚拟表，不可以存储数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    视图可以简化复杂查询，如果要经常性地执行某项复杂查询，就可以基于这个复杂查询建立视图，以后查询此视图即可
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    如果创建的是只读视图可以提高数据安全性，给不同用户定制化显示数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    可以像操作表一样操作视图，视图如果设置了条件语句插入数据时可能不显示，但基表总是显示修改的
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-check-option" class="md-nav__link">
+    视图添加了检测条件with check option后如果数据不满足视图的条件时插入会报错
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    存储过程-实现模块化的程序设计，提高执行效率（定义时一次编译后续直接调用）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    定义一个没有返回值的存储过程，实现模糊查询操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    定义存储过程，类似一个函数包含函数名和参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    删除存储过程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    调用存储过程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    定义一个有返回值的存储过程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inout-found_rows" class="md-nav__link">
+    IN表示输入参数，可以省略；OUT 表示输出参数，FOUND_ROWS()作用返回查询结果的条数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    常用函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    流程控制函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-when" class="md-nav__link">
+    CASE WHEN 用法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction" class="md-nav__link">
+    事务Transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    事务是一个操作序列，该序列中的操作要么都做要么都不做，可以简化错误恢复使应用程序更加可靠
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acidatomicity-consistency-isolation-durability" class="md-nav__link">
+    事务必须具备的ACID特性：原子性(Atomicity) 一致性(Consistency) 隔离性(Isolation) 持久性(Durability)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    #原子性是说事务中的所有操作同时成功或者同时失败回滚；一致性基于原子性，隔离性是其他事务的提交结果是否对当前事务可见；持久性是说事务一旦提交，对数据所做的任何改变，都要记录到永久存储器里
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    事务并发问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1dirty-read" class="md-nav__link">
+    1.脏读(Dirty read),另外一个事务读到了还未提交的数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2unrepeatableread" class="md-nav__link">
+    2.不可重复读(Unrepeatableread),如果另一个事务对数据的修改已经提交，就会导致第一个事务两次读取到的结果不一样
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.幻读；另一个事务（新增和删除）插入了数据，导致第一个事务发现多了原本不存在的记录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    事务隔离级别（解决事务并发问题）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-uncommitted-read-committed-repeatable-read-serializable" class="md-nav__link">
+    #隔离级别从低到高依次为 READ UNCOMMITTED读未提交 ; READ COMMITTED读提交, REPEATABLE READ（可重复读，事务执行时基于快照默认级别，一般用这个）; SERIALIZABLE(串行化，事务执行时对数据加锁，其他事务无法访问或者修改数据，一般不用，性能最差)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql_1" class="md-nav__link">
+    sql数据库表设计满足三大范式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql_2" class="md-nav__link">
+    sql索引
+  </a>
+  
+    <nav class="md-nav" aria-label="sql索引">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql_3" class="md-nav__link">
+    经典sql问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    每个分组中连续出现N次的问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -368,6 +953,558 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    SQL语句执行顺序
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL语句执行顺序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    字段拼接，遇到空值NULL结果直接为空
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concat_ws" class="md-nav__link">
+    CONCAT_WS表示以相同的拼接符拼接，自动过滤空值,拼接后原空值字段内容仍空；参数第一个表示字符，后面表示要拼接的内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    列中重复值去重
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    排序子句，对查询结果进行排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    空值处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-ifnullexpression-value-expressionvalue" class="md-nav__link">
+    如果为空，就当成15进行计算，只是计算时不作为空值，实际表中空值并没有被填充; ifnull(expression, value) 检查表达式expression是否为空，如果为空则返回value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#between-and-not-between" class="md-nav__link">
+    between and 是包含边界值的，not between不包括边界值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_" class="md-nav__link">
+    模糊查询，通配符的使用,_代表一个字符，知道具体的位置；而%可以代表多个字符或者空字符，知道大概位置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count1countnull" class="md-nav__link">
+    聚合函数， count(1)和count(*)都包含null;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count1nullcountnull" class="md-nav__link">
+    count(1)会统计包括null值的所有符合条件的字段的条数。count(*)将返回表格中所有存在的行的总数包括值为null的行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countnull" class="md-nav__link">
+    count(列名)将返回表格中除去null以外的所有行的总数(有默认值的列也会被计入）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    COUNT是唯一可以用*的聚合函数，不可以对多列进行计数.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-by" class="md-nav__link">
+    分组数据 GROUP BY,对聚合键先过滤再聚合,过滤行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    对聚合结果再次筛选得到分组，筛选组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#havinggroup-by" class="md-nav__link">
+    HAVING语句用于筛选分组聚合后的数据，只能在GROUP BY子句之后使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-by-xxx-limit-1-offset-4" class="md-nav__link">
+    ORDER BY  xxx Limit  1 Offset 4是最后一条筛选语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-xy-xy" class="md-nav__link">
+    limit x,y            #跳过x条数据读取y条数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-y-offset-x-xy" class="md-nav__link">
+    limit y offset x #跳过x条数据读取y条数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    多表查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    标量子查询，返回的是一个值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    关联子查询，嵌套在其他查询中的查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    不相关子查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in" class="md-nav__link">
+    子查询结果为一列值时，可以作为不连续的取值放在IN条件中
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    子查询结果为一个表，可以作为子表进行查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    #相关子查询（查询本部门最高工资的员工）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where" class="md-nav__link">
+    #相关子查询的执行依赖于外部查询。多数情况下是子查询的WHERE子句中引用了外部查询的表。
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    表联结
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inner-join" class="md-nav__link">
+    内连接 INNER JOIN 返回交集数据行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#left-join" class="md-nav__link">
+    left join(左联接) 返回包括左表中的所有记录和右表中联结字段相等的记录，右表中匹配不上的字段用空值填充
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#right-join" class="md-nav__link">
+    right join(右联接) 返回包括右表中的所有记录和左表中联结字段相等的记录，左表中匹配不上的字段空值填充
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#left-join-null" class="md-nav__link">
+    左连接 LEFT JOIN 返回匹配上的左表所有行，右表中没匹配上的返回null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#right-join-null" class="md-nav__link">
+    右连接 RIGHT JOIN 返回匹配上的右表所有行，左表没匹配上的返回null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-join-null" class="md-nav__link">
+    全连接 FULL JOIN  返回有交集的行和所有左右表没匹配上的行null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unionselectunionunion" class="md-nav__link">
+    组合查询UNION，多条SELECT语句用UNION联结起来，并且UNION有去重功能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    最终的表头与第一张表一致，同样的数据类型才能够合并成一张表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    对关系型数据表的增删改
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asc-desc" class="md-nav__link">
+    数据更新 ASC升序 DESC降序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    数据删除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-nulldefault" class="md-nav__link">
+    表操作-创建表  字段名，数据类型，属性（属性主要包括是否允许NULL，默认允许；默认值DEFAULT设置，必须是常数）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    复制表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    删除表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    修改表，对表结构的修改，对字段的增删操作,修改数据类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    对表进行更名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    视图本质上上是一个查询语句，是一个虚拟的不存在的表，它的内容是基于一个或多个表格的查询结果,修改视图会修改底层基表数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    视图是基于基表进行操作的，视图是每次查询时动态生成的虚拟表，不可以存储数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    视图可以简化复杂查询，如果要经常性地执行某项复杂查询，就可以基于这个复杂查询建立视图，以后查询此视图即可
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    如果创建的是只读视图可以提高数据安全性，给不同用户定制化显示数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    可以像操作表一样操作视图，视图如果设置了条件语句插入数据时可能不显示，但基表总是显示修改的
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-check-option" class="md-nav__link">
+    视图添加了检测条件with check option后如果数据不满足视图的条件时插入会报错
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    存储过程-实现模块化的程序设计，提高执行效率（定义时一次编译后续直接调用）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    定义一个没有返回值的存储过程，实现模糊查询操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    定义存储过程，类似一个函数包含函数名和参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    删除存储过程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    调用存储过程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    定义一个有返回值的存储过程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inout-found_rows" class="md-nav__link">
+    IN表示输入参数，可以省略；OUT 表示输出参数，FOUND_ROWS()作用返回查询结果的条数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    常用函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    流程控制函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-when" class="md-nav__link">
+    CASE WHEN 用法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction" class="md-nav__link">
+    事务Transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    事务是一个操作序列，该序列中的操作要么都做要么都不做，可以简化错误恢复使应用程序更加可靠
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acidatomicity-consistency-isolation-durability" class="md-nav__link">
+    事务必须具备的ACID特性：原子性(Atomicity) 一致性(Consistency) 隔离性(Isolation) 持久性(Durability)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    #原子性是说事务中的所有操作同时成功或者同时失败回滚；一致性基于原子性，隔离性是其他事务的提交结果是否对当前事务可见；持久性是说事务一旦提交，对数据所做的任何改变，都要记录到永久存储器里
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    事务并发问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1dirty-read" class="md-nav__link">
+    1.脏读(Dirty read),另外一个事务读到了还未提交的数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2unrepeatableread" class="md-nav__link">
+    2.不可重复读(Unrepeatableread),如果另一个事务对数据的修改已经提交，就会导致第一个事务两次读取到的结果不一样
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.幻读；另一个事务（新增和删除）插入了数据，导致第一个事务发现多了原本不存在的记录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    事务隔离级别（解决事务并发问题）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-uncommitted-read-committed-repeatable-read-serializable" class="md-nav__link">
+    #隔离级别从低到高依次为 READ UNCOMMITTED读未提交 ; READ COMMITTED读提交, REPEATABLE READ（可重复读，事务执行时基于快照默认级别，一般用这个）; SERIALIZABLE(串行化，事务执行时对数据加锁，其他事务无法访问或者修改数据，一般不用，性能最差)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql_1" class="md-nav__link">
+    sql数据库表设计满足三大范式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql_2" class="md-nav__link">
+    sql索引
+  </a>
+  
+    <nav class="md-nav" aria-label="sql索引">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql_3" class="md-nav__link">
+    经典sql问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    每个分组中连续出现N次的问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -383,7 +1520,570 @@
 
   <h1>sql</h1>
 
-
+<h2 id="sql">SQL语句执行顺序</h2>
+<h5 id="_1"></h5>
+<p><img alt="sql-image-1" src="../images/sql-image-1.png" /></p>
+<h5 id="_2"></h5>
+<p><img alt="sql-image-2" src="../images/sql-image-2.png" /></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">prod_id</span><span class="p">,</span><span class="w"> </span><span class="n">prod_name</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">9</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">prod_name</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">in_price</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">sale_price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">9</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">new_sale</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">select</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">prod_name</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">sale_price</span><span class="o">*</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">discount</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="null">字段拼接，遇到空值NULL结果直接为空</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="n">prod_name</span><span class="p">,</span><span class="w"> </span><span class="n">net_w</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">产品信息</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">concat</span><span class="p">(</span><span class="n">prod_name</span><span class="p">,</span><span class="w"> </span><span class="n">net_w</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="err">产品信息</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="n">prod_name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">sale_price</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">产品信息</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="concat_ws">CONCAT_WS表示以相同的拼接符拼接，自动过滤空值,拼接后原空值字段内容仍空；参数第一个表示字符，后面表示要拼接的内容</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">CONCAT_WS</span><span class="p">(</span><span class="s1">&#39;是&#39;</span><span class="p">,</span><span class="n">prod_name</span><span class="p">,</span><span class="n">net_w</span><span class="p">,</span><span class="s1">&#39;单价&#39;</span><span class="p">,</span><span class="n">sale_price</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">产品信息</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">concat_ws</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">prod_name</span><span class="p">,</span><span class="w"> </span><span class="n">net_w</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;单价&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">sale_price</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="err">产品信息</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_3">列中重复值去重</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">sale_price</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">select</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_4">排序子句，对查询结果进行排序</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">CONVERT</span><span class="p">(</span><span class="n">prod_name</span><span class="w"> </span><span class="k">USING</span><span class="w"> </span><span class="n">gbk</span><span class="p">);</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">convert</span><span class="p">(</span><span class="n">prod_name</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">gbk</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="_5">空值处理</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">IFNULL</span><span class="p">(</span><span class="n">sale_price</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span><span class="o">=</span><span class="mi">15</span><span class="p">;</span><span class="w">  </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">ifnull</span><span class="p">(</span><span class="n">sale_price</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span><span class="o">=</span><span class="mi">15</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="15-ifnullexpression-value-expressionvalue">如果为空，就当成15进行计算，只是计算时不作为空值，实际表中空值并没有被填充; ifnull(expression, value) 检查表达式expression是否为空，如果为空则返回value</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">IFNULL</span><span class="p">(</span><span class="n">sale_price</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span><span class="o">=</span><span class="mi">15</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">IFNULL</span><span class="p">(</span><span class="n">sale_price</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="mi">0</span><span class="p">.</span><span class="mi">9</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="between-and-not-between">between and 是包含边界值的，not between不包括边界值</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">in_price</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="o">&gt;=</span><span class="mi">5</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="o">&lt;=</span><span class="mi">15</span><span class="p">;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="o">&gt;=</span><span class="mi">5</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="o">&lt;=</span><span class="mi">15</span><span class="p">;</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;奶茶&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;薯片&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;棒棒糖&#39;</span><span class="p">);</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;奶茶&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;薯片&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="_">模糊查询，通配符的使用,_代表一个字符，知道具体的位置；而%可以代表多个字符或者空字符，知道大概位置</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;奶_&#39;</span><span class="p">;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%糖&#39;</span><span class="p">;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;薯_&#39;</span><span class="p">;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;薯_&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="count1countnull">聚合函数， count(1)和count(*)都包含null;</h3>
+<h3 id="count1nullcountnull">count(1)会统计包括null值的所有符合条件的字段的条数。count(*)将返回表格中所有存在的行的总数包括值为null的行</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span>
+</span></code></pre></div>
+<h3 id="countnull">count(列名)将返回表格中除去null以外的所有行的总数(有默认值的列也会被计入）</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">sale_price</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span><span class="w"> </span>
+</span></code></pre></div>
+<h3 id="count">COUNT是唯一可以用*的聚合函数，不可以对多列进行计数.</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">sale_price</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">sale_price</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">sale_price</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">sale_price</span><span class="p">),</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">sale_price</span><span class="p">),</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">sale_price</span><span class="p">),</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">sale_price</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="group-by">分组数据 GROUP BY,对聚合键先过滤再聚合,过滤行</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">net_w</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">sale_price</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">net_w</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;100g&#39;</span><span class="p">,</span><span class="s1">&#39;150g&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">net_w</span><span class="p">;</span><span class="w"> </span>
+</span></code></pre></div>
+<h3 id="_6">对聚合结果再次筛选得到分组，筛选组</h3>
+<h3 id="havinggroup-by">HAVING语句用于筛选分组聚合后的数据，只能在GROUP BY子句之后使用</h3>
+<h3 id="order-by-xxx-limit-1-offset-4">ORDER BY  xxx Limit  1 Offset 4是最后一条筛选语句</h3>
+<h3 id="limit-xy-xy">limit x,y            #跳过x条数据读取y条数据</h3>
+<h3 id="limit-y-offset-x-xy">limit y offset x #跳过x条数据读取y条数据</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">net_w</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">net_w</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;100g&#39;</span><span class="p">,</span><span class="s1">&#39;150g&#39;</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">net_w</span><span class="w"> </span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">2</span><span class="w"> </span><span class="o">#</span><span class="n">having中是可以使用聚合函数的</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">net_w</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_7">多表查询</h3>
+<h3 id="_8">标量子查询，返回的是一个值</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;奶茶&#39;</span><span class="p">;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">m</span><span class="w"> </span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">sale_price</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">                                                </span><span class="k">SELECT</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">                                                </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">                                                </span><span class="k">WHERE</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;奶茶&#39;</span><span class="p">);</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">sale_price</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;奶茶&#39;</span><span class="p">);</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">            </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">            </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;奶茶&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="p">;</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">class</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">sale_price</span><span class="p">)</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">class</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="k">HAVING</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">sale_price</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">                                                  </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">                                                  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;奶茶&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="_9">关联子查询，嵌套在其他查询中的查询</h3>
+<h3 id="_10">不相关子查询</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sale_price</span><span class="o">=</span><span class="mi">15</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="in">子查询结果为一列值时，可以作为不连续的取值放在IN条件中</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">prod_name</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">prod_name</span><span class="w"> </span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">                                            </span><span class="k">FROM</span><span class="w"> </span><span class="n">milk_tea</span><span class="w"> </span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">                                            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sale_price</span><span class="o">=</span><span class="mi">15</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="_11">子查询结果为一个表，可以作为子表进行查询</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">prod_name</span><span class="p">,</span><span class="w"> </span><span class="k">type</span><span class="p">,</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">prod_name</span><span class="o">=</span><span class="s1">&#39;抽纸&#39;</span><span class="p">;</span><span class="w">                                     </span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">prod_name</span><span class="p">,</span><span class="w"> </span><span class="k">type</span><span class="p">,</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">            </span><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span><span class="w"> </span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">prod_name</span><span class="o">=</span><span class="s1">&#39;抽纸&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">m</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">sale_price</span><span class="w"> </span><span class="o">&lt;=</span><span class="mi">28</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_12">#相关子查询（查询本部门最高工资的员工）</h3>
+<h3 id="where">#相关子查询的执行依赖于外部查询。多数情况下是子查询的WHERE子句中引用了外部查询的表。</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">--方法一、通过不相关子查询实现，但是这种方式语句较多，具体有多少部分也未知</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">deptno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">deptno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="k">UNION</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">deptno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">deptno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="k">UNION</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">deptno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">deptno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="c1">--方法二、相关子查询，子查询不可以独立运行，先运行外查询，再运行里面的</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">deptno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">deptno</span><span class="p">);</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">sal</span><span class="o">=</span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">deptno</span><span class="o">=</span><span class="n">e</span><span class="p">.</span><span class="n">deptno</span><span class="p">);</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">deptno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">deptno</span><span class="p">);</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="c1">--查询工资高于其所在岗位的平均工资的员工（相关子查询）</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">AVERAGE</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">job</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="_13">表联结</h3>
+<h3 id="inner-join">内连接 INNER JOIN 返回交集数据行</h3>
+<h3 id="left-join">left join(左联接) 返回包括左表中的所有记录和右表中联结字段相等的记录，右表中匹配不上的字段用空值填充</h3>
+<h3 id="right-join">right join(右联接) 返回包括右表中的所有记录和左表中联结字段相等的记录，左表中匹配不上的字段空值填充</h3>
+<h3 id="left-join-null">左连接 LEFT JOIN 返回匹配上的左表所有行，右表中没匹配上的返回null</h3>
+<h3 id="right-join-null">右连接 RIGHT JOIN 返回匹配上的右表所有行，左表没匹配上的返回null</h3>
+<h3 id="full-join-null">全连接 FULL JOIN  返回有交集的行和所有左右表没匹配上的行null</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">supplier_info</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="o">*</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">supplier_info</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">supplier_id</span><span class="o">=</span><span class="n">s</span><span class="p">.</span><span class="n">supplier_id</span><span class="p">;</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="o">*</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">supplier_info</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span><span class="w"> </span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">supplier_id</span><span class="o">=</span><span class="n">s</span><span class="p">.</span><span class="n">supplier_id</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="unionselectunionunion">组合查询UNION，多条SELECT语句用UNION联结起来，并且UNION有去重功能</h3>
+<h3 id="_14">最终的表头与第一张表一致，同样的数据类型才能够合并成一张表</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">order_list</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">order_id</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;20190407%&#39;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">UNION</span><span class="w"> </span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">order_list</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">order_id</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;20190409%&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_15">对关系型数据表的增删改</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span><span class="p">;</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">prod_info</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="mi">20003</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;番茄味薯片&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;乐事&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;80g&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;零食&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">.</span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">.</span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NJ0002&#39;</span><span class="p">);</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">prod_info</span><span class="p">(</span><span class="n">prod_id</span><span class="p">,</span><span class="w"> </span><span class="n">prod_name</span><span class="p">,</span><span class="w"> </span><span class="n">brand</span><span class="p">,</span><span class="w"> </span><span class="k">type</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="mi">30005</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;芬达&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;百事&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;饮料&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="asc-desc">数据更新 ASC升序 DESC降序</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">prod_id</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">prod_info</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">SET</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;休闲零食&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">sale_price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sale_price</span><span class="o">*</span><span class="mi">0</span><span class="p">.</span><span class="mi">9</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">class</span><span class="o">=</span><span class="s1">&#39;零食&#39;</span><span class="p">;</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_16">数据删除</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">prod_info</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">prod_id</span><span class="o">=</span><span class="s1">&#39;30005&#39;</span><span class="p">;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span><span class="p">;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">prod_name</span><span class="o">=</span><span class="s1">&#39;抽纸&#39;</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="err">从表中删除一些数据</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">prod_info</span><span class="p">;</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="o">#</span><span class="n">DELETE是可以带WHERE的</span><span class="p">,</span><span class="err">所以支持条件删除</span><span class="p">;</span><span class="err">而</span><span class="n">TRUNCATE只能删除整个表的内容</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="k">TRUNCATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">prod_info</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="-nulldefault">表操作-创建表  字段名，数据类型，属性（属性主要包括是否允许NULL，默认允许；默认值DEFAULT设置，必须是常数）</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">pet1</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="p">(</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="k">owner</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="n">species</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">    </span><span class="n">sex</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">    </span><span class="n">birth</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">    </span><span class="n">death</span><span class="w"> </span><span class="nb">DATE</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="p">);</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">PET1</span><span class="p">(</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="n">NAME</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="k">OWNER</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="n">SPECIES</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="n">SEX</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="n">BIRTH</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="n">DEATH</span><span class="w"> </span><span class="nb">DATE</span>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="p">);</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet1</span><span class="p">;</span>
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">pet1</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">owner</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">birth</span><span class="p">,</span><span class="w"> </span><span class="n">death</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;pupy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Shirley&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">20160901</span><span class="p">,</span><span class="w"> </span><span class="mi">20210120</span><span class="p">);</span>
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a>
+</span><span id="__span-24-24"><a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">pet1</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;pipy&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_17">复制表</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">pet5</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">AS</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet2</span><span class="p">;</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">pet5</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">pet2</span><span class="p">);</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet5</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_18">删除表</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">pet5</span><span class="p">;</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">pet5</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">AS</span><span class="w"> </span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">owner</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet2</span><span class="p">;</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet5</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_19">修改表，对表结构的修改，对字段的增删操作,修改数据类型</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">pet5</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">pet5</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">birth</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">pet5</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="n">sex</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="err">或者可以用</span><span class="k">DROP</span><span class="w"> </span><span class="k">COLUMN</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet5</span><span class="p">;</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">pet5</span><span class="w"> </span><span class="k">MODIFY</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">pet5</span><span class="w"> </span><span class="k">modify</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">pet5</span><span class="w"> </span><span class="k">modify</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="_20">对表进行更名</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">RENAME</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">pet5</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">pet6</span><span class="p">;</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">pet6</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_21">视图本质上上是一个查询语句，是一个虚拟的不存在的表，它的内容是基于一个或多个表格的查询结果,修改视图会修改底层基表数据</h3>
+<h3 id="_22">视图是基于基表进行操作的，视图是每次查询时动态生成的虚拟表，不可以存储数据</h3>
+<h3 id="_23">视图可以简化复杂查询，如果要经常性地执行某项复杂查询，就可以基于这个复杂查询建立视图，以后查询此视图即可</h3>
+<h3 id="_24">如果创建的是只读视图可以提高数据安全性，给不同用户定制化显示数据</h3>
+<h3 id="_25">可以像操作表一样操作视图，视图如果设置了条件语句插入数据时可能不显示，但基表总是显示修改的</h3>
+<h3 id="with-check-option">视图添加了检测条件with check option后如果数据不满足视图的条件时插入会报错</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet2</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="err">视图的基表</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="c1">--创建/替换（如果视图已经存在，就是替换或者说修改）单表视图</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">pet_show</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="k">AS</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet2</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="k">WITH</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="k">OPTION</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="err">该语句表明如果插入不符合该条件的数据，就会报错，也即对视图修改增加数据时必须符合创建该视图时的</span><span class="n">where条件</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">pet_show</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">pet2</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="k">option</span><span class="p">;</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="c1">--查看视图</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet_show</span><span class="p">;</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="c1">--在视图中插入数据</span>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">pet_show</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">owner</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pangpang&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;David&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;F&#39;</span><span class="p">);</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet2</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="err">实际的表中也被插入了数据</span>
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>
+</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>
+</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="c1">---创建/替换多表视图</span>
+</span><span id="__span-29-18"><a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">myview02</span>
+</span><span id="__span-29-19"><a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a><span class="k">AS</span>
+</span><span id="__span-29-20"><a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">empno</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">ename</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">sal</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">deptno</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">dname</span><span class="w"> </span>
+</span><span id="__span-29-21"><a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">e</span>
+</span><span id="__span-29-22"><a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">d</span>
+</span><span id="__span-29-23"><a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">deptno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">deptno</span>
+</span><span id="__span-29-24"><a id="__codelineno-29-24" name="__codelineno-29-24" href="#__codelineno-29-24"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">sal</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2000</span>
+</span><span id="__span-29-25"><a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a>
+</span><span id="__span-29-26"><a id="__codelineno-29-26" name="__codelineno-29-26" href="#__codelineno-29-26"></a>
+</span><span id="__span-29-27"><a id="__codelineno-29-27" name="__codelineno-29-27" href="#__codelineno-29-27"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">owner</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet_show</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sex</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">;</span>
+</span><span id="__span-29-28"><a id="__codelineno-29-28" name="__codelineno-29-28" href="#__codelineno-29-28"></a>
+</span><span id="__span-29-29"><a id="__codelineno-29-29" name="__codelineno-29-29" href="#__codelineno-29-29"></a><span class="k">DROP</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">pet_show</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="-">存储过程-实现模块化的程序设计，提高执行效率（定义时一次编译后续直接调用）</h3>
+<h3 id="_26">定义一个没有返回值的存储过程，实现模糊查询操作</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet2</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%w%&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_27">定义存储过程，类似一个函数包含函数名和参数</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">mypro01</span><span class="p">(</span><span class="n">name1</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="k">BEGIN</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">  </span><span class="k">IF</span><span class="w"> </span><span class="n">name1</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">name1</span><span class="w"> </span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">       </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet2</span><span class="p">;</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">  </span><span class="k">ELSE</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">       </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet2</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">name1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;%&#39;</span><span class="p">);</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="k">END</span><span class="p">;</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">MYPRO01</span><span class="p">(</span><span class="n">NAME1</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="k">BEGIN</span>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="k">IF</span><span class="w"> </span><span class="n">NAME1</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">NAME1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">PET2</span><span class="p">;</span>
+</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a><span class="k">ELSE</span><span class="w"> </span>
+</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">PET2</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">NAME</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">NAME1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;%&#39;</span><span class="p">);</span>
+</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+</span><span id="__span-31-16"><a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a><span class="k">END</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_28">删除存储过程</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">DROP</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">mypro01</span><span class="p">;</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="k">DROP</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">MYPRO01</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_29">调用存储过程</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">CALL</span><span class="w"> </span><span class="n">mypro01</span><span class="p">(</span><span class="k">NULL</span><span class="p">);</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">CALL</span><span class="w"> </span><span class="n">mypro01</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="k">CALL</span><span class="w"> </span><span class="n">test</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="k">DROP</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">test</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_30">定义一个有返回值的存储过程</h3>
+<h3 id="inout-found_rows">IN表示输入参数，可以省略；OUT 表示输出参数，FOUND_ROWS()作用返回查询结果的条数</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">mypro02</span><span class="p">(</span><span class="k">IN</span><span class="w"> </span><span class="n">name1</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="k">OUT</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="k">BEGIN</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">  </span><span class="k">IF</span><span class="w"> </span><span class="n">name1</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">name1</span><span class="w"> </span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">       </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet2</span><span class="p">;</span>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">  </span><span class="k">ELSE</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="w">       </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pet2</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">name1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;%&#39;</span><span class="p">);</span>
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">FOUND_ROWS</span><span class="p">()</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="k">END</span><span class="p">;</span>
+</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a>
+</span><span id="__span-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="k">DROP</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">mypro02</span><span class="p">;</span>
+</span><span id="__span-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>
+</span><span id="__span-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a>
+</span><span id="__span-34-14"><a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a><span class="k">CALL</span><span class="w"> </span><span class="n">mypro02</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">num</span><span class="p">);</span><span class="w"> </span><span class="o">#@</span><span class="err">区别了接收的结果参数</span>
+</span><span id="__span-34-15"><a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">@</span><span class="n">num</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="err">返回值通过这种形式可以查看</span>
+</span><span id="__span-34-16"><a id="__codelineno-34-16" name="__codelineno-34-16" href="#__codelineno-34-16"></a>
+</span><span id="__span-34-17"><a id="__codelineno-34-17" name="__codelineno-34-17" href="#__codelineno-34-17"></a><span class="k">CALL</span><span class="w"> </span><span class="n">mypro02</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">aaa</span><span class="p">);</span>
+</span><span id="__span-34-18"><a id="__codelineno-34-18" name="__codelineno-34-18" href="#__codelineno-34-18"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">@</span><span class="n">aaa</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="_31">常用函数</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ROUND</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">55</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">四舍五入函数</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">CEIL</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">向上取整</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">CEILING</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">向上取整</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">FLOOR</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">向下取整</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">TRUNCATE</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">222436457</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">截断，截取数字到小数点后两位</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">MOD</span><span class="p">(</span><span class="mi">234</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">相除取余</span>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">NOW</span><span class="p">();</span><span class="w"> </span><span class="o">#</span><span class="err">返回当前日期加时间</span>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">CURDATE</span><span class="p">();</span><span class="w"> </span><span class="o">#</span><span class="err">返回当前系统日期不包含时间</span>
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">STR_TO_DATE</span><span class="p">(</span><span class="s1">&#39;4#3-2021&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;%m#%d-%Y&#39;</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">将字符串转化为日期</span>
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">DATE_FORMAT</span><span class="p">(</span><span class="n">NOW</span><span class="p">(),</span><span class="w"> </span><span class="s1">&#39;%m#%d#%Y&#39;</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">将日期转化为字符串</span>
+</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">SUBSTR</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">返回指定位置及其之后的字符串，索引从</span><span class="mi">1</span><span class="err">开始</span>
+</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">SUBSTR</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">从第一个字符开始截取两个字符</span>
+</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">INSTR</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">,</span><span class="s1">&#39;CD&#39;</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">返回第二个参数在第一个参数中第一次出现的位置（索引从</span><span class="mi">1</span><span class="err">开始），若没有出现，返回</span><span class="mi">0</span>
+</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">TRIM</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="k">FROM</span><span class="s1">&#39;##3vjsv###&#39;</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">去除首尾指定字符，若不指定则表示去除空格</span>
+</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">REPLACE</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">,</span><span class="s1">&#39;BC&#39;</span><span class="p">,</span><span class="s1">&#39;#&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">#</span><span class="err">替换所有指定字符串为另一个字符串</span>
+</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">VERSION</span><span class="p">();</span><span class="w"> </span><span class="o">#</span><span class="err">获取</span><span class="n">sql版本号</span>
+</span><span id="__span-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">USER</span><span class="p">();</span><span class="w"> </span><span class="o">#</span><span class="err">获取当前用户名</span>
+</span><span id="__span-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">DATABASE</span><span class="p">();</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="err">获取当前所在数据库</span>
+</span><span id="__span-35-19"><a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ASCII</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="err">返回字符的</span><span class="n">ASCII值</span>
+</span><span id="__span-35-20"><a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">TRUNCATE</span><span class="p">(</span><span class="mi">351</span><span class="p">.</span><span class="mi">3253</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="err">从小数点右第二位截断</span>
+</span><span id="__span-35-21"><a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">TRUNCATE</span><span class="p">(</span><span class="mi">351</span><span class="p">.</span><span class="mi">3253</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="err">从小数点左第二位截断</span>
+</span></code></pre></div>
+<h3 id="_32">流程控制函数</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">IF</span><span class="p">(</span><span class="mi">10</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;大&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;小&#39;</span><span class="p">);</span><span class="w"> </span>
+</span></code></pre></div>
+<h3 id="case-when">CASE WHEN 用法</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">CASE</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="k">WHEN</span><span class="w"> </span><span class="err">条件</span><span class="mi">1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="err">要显示的值</span><span class="mi">1</span><span class="err">或者语句</span><span class="mi">1</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="k">WHEN</span><span class="w"> </span><span class="err">条件</span><span class="mi">2</span><span class="w">   </span><span class="k">THEN</span><span class="w"> </span><span class="err">要显示的值</span><span class="mi">2</span><span class="err">或者语句</span><span class="mi">2</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="k">WHEN</span><span class="w"> </span><span class="err">条件</span><span class="mi">3</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="err">要显示的值</span><span class="mi">3</span><span class="err">或者语句</span><span class="mi">3</span>
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="k">ELSE</span><span class="w">  </span><span class="err">要显示的值</span><span class="n">x或者与语句x</span>
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>
+</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="k">END</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="transaction">事务Transaction</h3>
+<h3 id="_33">事务是一个操作序列，该序列中的操作要么都做要么都不做，可以简化错误恢复使应用程序更加可靠</h3>
+<h3 id="acidatomicity-consistency-isolation-durability">事务必须具备的ACID特性：原子性(Atomicity) 一致性(Consistency) 隔离性(Isolation) 持久性(Durability)</h3>
+<h3 id="_34">#原子性是说事务中的所有操作同时成功或者同时失败回滚；一致性基于原子性，隔离性是其他事务的提交结果是否对当前事务可见；持久性是说事务一旦提交，对数据所做的任何改变，都要记录到永久存储器里</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1">-----------------sql使用事务保证转账安全--------------------------</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="c1">--创建账户表：</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">account</span><span class="p">(</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">auto_increment</span><span class="p">,</span><span class="o">#</span><span class="err">主键一般使其为自增状态</span>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="w">    </span><span class="n">uname</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="w">    </span><span class="n">balance</span><span class="w"> </span><span class="n">DOUBLE</span><span class="w"> </span><span class="o">#</span><span class="err">账户余额</span>
+</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="p">);</span>
+</span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="c1">--查看账户表</span>
+</span><span id="__span-38-9"><a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">account</span><span class="p">;</span>
+</span><span id="__span-38-10"><a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="c1">--在表中插入数据</span>
+</span><span id="__span-38-11"><a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;丽丽&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2000&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;小刚&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2000&#39;</span><span class="p">);</span>
+</span><span id="__span-38-12"><a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a><span class="c1">--丽丽给小刚转账200元</span>
+</span><span id="__span-38-13"><a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="o">-</span><span class="mi">200</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">uname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;丽丽&#39;</span><span class="p">;</span>
+</span><span id="__span-38-14"><a id="__codelineno-38-14" name="__codelineno-38-14" href="#__codelineno-38-14"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="o">+</span><span class="mi">200</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">uname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;小刚&#39;</span><span class="p">;</span>
+</span><span id="__span-38-15"><a id="__codelineno-38-15" name="__codelineno-38-15" href="#__codelineno-38-15"></a><span class="c1">---默认一个DML语句是一个事务，所以上面的操作执行了2个事务；必须使上面两个操作控制在一个事务中</span>
+</span><span id="__span-38-16"><a id="__codelineno-38-16" name="__codelineno-38-16" href="#__codelineno-38-16"></a>
+</span><span id="__span-38-17"><a id="__codelineno-38-17" name="__codelineno-38-17" href="#__codelineno-38-17"></a><span class="c1">--手动开启事务;</span>
+</span><span id="__span-38-18"><a id="__codelineno-38-18" name="__codelineno-38-18" href="#__codelineno-38-18"></a><span class="k">START</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
+</span><span id="__span-38-19"><a id="__codelineno-38-19" name="__codelineno-38-19" href="#__codelineno-38-19"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="o">-</span><span class="mi">200</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">uname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;丽丽&#39;</span><span class="p">;</span>
+</span><span id="__span-38-20"><a id="__codelineno-38-20" name="__codelineno-38-20" href="#__codelineno-38-20"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="o">+</span><span class="mi">200</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">uname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;小刚&#39;</span><span class="p">;</span>
+</span><span id="__span-38-21"><a id="__codelineno-38-21" name="__codelineno-38-21" href="#__codelineno-38-21"></a>
+</span><span id="__span-38-22"><a id="__codelineno-38-22" name="__codelineno-38-22" href="#__codelineno-38-22"></a><span class="c1">--手动回滚，刚才执行的操作全部取消;后悔。</span>
+</span><span id="__span-38-23"><a id="__codelineno-38-23" name="__codelineno-38-23" href="#__codelineno-38-23"></a><span class="k">ROLLBACK</span><span class="p">;</span>
+</span><span id="__span-38-24"><a id="__codelineno-38-24" name="__codelineno-38-24" href="#__codelineno-38-24"></a>
+</span><span id="__span-38-25"><a id="__codelineno-38-25" name="__codelineno-38-25" href="#__codelineno-38-25"></a><span class="c1">--手动提交</span>
+</span><span id="__span-38-26"><a id="__codelineno-38-26" name="__codelineno-38-26" href="#__codelineno-38-26"></a><span class="k">COMMIT</span><span class="p">;</span>
+</span><span id="__span-38-27"><a id="__codelineno-38-27" name="__codelineno-38-27" href="#__codelineno-38-27"></a><span class="c1">---在回滚和提交之前，数据库中的数据都是操作的缓存数据，而不是数据库中的真实数据</span>
+</span></code></pre></div>
+<h3 id="_35">事务并发问题</h3>
+<h3 id="1dirty-read">1.脏读(Dirty read),另外一个事务读到了还未提交的数据</h3>
+<h3 id="2unrepeatableread">2.不可重复读(Unrepeatableread),如果另一个事务对数据的修改已经提交，就会导致第一个事务两次读取到的结果不一样</h3>
+<h3 id="3">3.幻读；另一个事务（新增和删除）插入了数据，导致第一个事务发现多了原本不存在的记录</h3>
+<h3 id="_36">事务隔离级别（解决事务并发问题）</h3>
+<h3 id="read-uncommitted-read-committed-repeatable-read-serializable">#隔离级别从低到高依次为 READ UNCOMMITTED读未提交 ; READ COMMITTED读提交, REPEATABLE READ（可重复读，事务执行时基于快照默认级别，一般用这个）; SERIALIZABLE(串行化，事务执行时对数据加锁，其他事务无法访问或者修改数据，一般不用，性能最差)</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1">--查看默认的事务隔离级别</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">@@</span><span class="n">TRANSACTION_ISOLATION</span><span class="p">;</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="c1">--设置事务的隔离级别（设置当前会话的隔离级别）</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="k">SET</span><span class="w"> </span><span class="k">SESSION</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">UNCOMMITTED</span><span class="p">;</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="k">SET</span><span class="w"> </span><span class="k">SESSION</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">COMMITTED</span><span class="p">;</span>
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="k">SET</span><span class="w"> </span><span class="k">SESSION</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">SERIALIZABLE</span><span class="p">;</span>
+</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="k">START</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
+</span><span id="__span-39-9"><a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="sql_1">sql数据库表设计满足三大范式</h3>
+<p>第一范式(确保每列保持原子性)</p>
+<p>第二范式(确保表中的每列都和主键相关)</p>
+<p>第三范式(确保每列都和主键列直接相关,而不是间接相关)</p>
+<h3 id="sql_2">sql索引</h3>
+<p><strong>索引的原理</strong></p>
+<p>以空间换时间，数据库在未添加索引的时候进行查询默认的是进行全量搜索，也就是进行全局扫描，有多少条数据就要进行多少次查询，然后找到相匹配的数据就把他放到结果集中，直到全表扫描完。而建立索引之后，会将建立索引的KEY值放在一个n叉树上（B+Tree）。因每次以索引进行条件查询时，会去树上根据key值直接进行搜索，次数约为log总条数，但是全量搜索为100万次搜索，这种方式类似于二分法，但是这个是n分法。</p>
+<p>B+树改进了B树, 让内结点只作索引使用, 去掉了其中指向data record的指针, 使得每个结点中能够存放更多的key, 这样就意味着存放同样多的key, 树的层高能进一步被压缩, 使得检索的时间更短. </p>
+<p>B+树叶⼦节点存储了所有数据并且进⾏了排序，并且叶⼦节点之间有指针，可以很好的⽀持全表扫描，范围查找等SQL语句</p>
+<p><strong>什么是索引</strong></p>
+<p>索引指数据库的目录，比如：字典上面的字母目录 (适用于大数据量)</p>
+<p><strong>建立索引的优缺点</strong></p>
+<p>优点: 查询速度快</p>
+<p>缺点: 增删改慢，因为数据库要同步去维护索引文件，所以速度慢</p>
+<p><strong>索引有什么分类？</strong></p>
+<ol>
+<li>主键索引：名为primary的唯一非空索引，不允许有空值。</li>
+<li>唯一索引：索引列中的值必须是唯一的，但是允许为空值。唯一索引和主键索引的区别是：UNIQUE 约束的列可以为null且可以存在多个null值。UNIQUE KEY的用途：唯一标识数据库表中的每条记录，主要是用来防止数据重复插入。创建唯一索引的SQL语句如下：</li>
+<li>组合索引：在表中的多个字段组合上创建的索引，只有在查询条件中使用了这些字段的左边字段时，索引才会被使用，使用组合索引时遵循最左前缀原则</li>
+<li>全文索引：只有在MyISAM引擎上才能使用，只能在CHAR,VARCHAR,TEXT类型字段上使用全文索引。</li>
+</ol>
+<p><strong>索引检索为什么快</strong></p>
+<p>索引结构：B+Tree</p>
+<p><strong>聚集索引（主键索引）和非聚集索引（非主键索引）的根本区别是表记录的排列顺序和与索引的排列顺序是否一致；聚集索引存储记录是物理上连续存在，而非聚集索引是逻辑上的连续，物理上并不连续</strong></p>
+<p><strong>为什么主键索引查询更快呢</strong></p>
+<p>因为主键索引树的叶子节点直接就是我们要查询的整行数据了。而非主键索引的叶子节点是主键的值，查到主键的值以后，还需要再通过主键的值再进行一次查询，这个过程称为回表</p>
+<p><strong>非主键索引一定会查询多次吗？</strong></p>
+<p>可以使用覆盖索引来减少查询次数</p>
+<p>当sql语句的所求查询字段（select列）和查询条件字段（where子句）全都包含在一个索引中（联合索引），可以直接使用索引查询而不需要回表。这就是覆盖索引</p>
+<p><strong>索引的优点：</strong></p>
+<p>① 建立索引的列可以保证行的唯一性，生成唯一的rowId</p>
+<p>② 建立索引可以有效缩短数据的检索时间</p>
+<p>③ 建立索引可以加快表与表之间的连接</p>
+<p>④ 为用来排序或者是分组的字段添加索引可以加快分组和排序顺序</p>
+<p><strong>索引的缺点：</strong></p>
+<p>① 创建索引和维护索引需要时间成本，这个成本随着数据量的增加而加大</p>
+<p>② 创建索引和维护索引需要空间成本，每一条索引都要占据数据库的物理存储空间，数据量越大，占用空间也越大（数据表占据的是数据库的数据空间）</p>
+<p>③ 会降低表的增删改的效率，因为每次增删改索引需要进行动态维护，导致时间变长</p>
+<p><strong>一般你们会在什么情况下加索引</strong></p>
+<p>频繁作为查询条件的字段应该创建索引</p>
+<p>查询中与其他表关联的字段，外键关系建立索引</p>
+<p>查询中排序、分组的字段</p>
+<p><strong>怎么知道索引用没用上</strong></p>
+<p>通过explain查询sql执行计划，在要查询的语句前面加上explain plan for </p>
+<p><strong>用过组合索引吗，是有序的吗</strong></p>
+<p>用过， 有序(最左原则)</p>
+<p><strong>什么情况下会使索引失效？</strong></p>
+<p>（1）like</p>
+<p>（2）like “%123%，前面不能+%</p>
+<p>（3）使用 关键字 in ，or ，null，!=</p>
+<p><strong>sql优化您们是怎么做的？</strong></p>
+<p>一.首先开启数据库慢查询日志，定位到查询效率比较低的sql , 找出对应的sql语句并进行分析</p>
+<p>1.<strong>表设计</strong>是否规范，是否符合三范式的标准</p>
+<p>（1）第一范式：保证原子性（不可拆分）字段的原子化是指一个字段里不要包括多个同类型的值</p>
+<p>（2）第二范式：每一列都有主键相关</p>
+<p>（3）第三范式每一列与主键直接相关而不是间接相关，减少冗余字段的约束</p>
+<p>2.查看数据表中是否存在大量的冗余字段，字段数据类型是否合理</p>
+<p>3.尽可能的使用varchar代替char 建表数据类型，能用数值的绝对不用字符存储</p>
+<p>4.尽量避免null值，使用默认值替代空值，数值型可以使用0，字符型可以使用空字符串</p>
+<p>二.查看sql语句是否规范</p>
+<p>（1）避免使用关键字：or ，in，not in ，!=，&lt;&gt;，避免使用select *</p>
+<p>（2）尽量避免子查询，大部分子查询都可以连接查询</p>
+<p>（3）用到or的地方可以使用union去代替实现</p>
+<p>（4）用到in的地方可以使用exists去代替</p>
+<p>三.分析sql的索引是否可以用上</p>
+<p>（1) explain查询sql的执行计划,重点关注的几个列就是，type是不是全表扫描</p>
+<p>（2）看一下索引是否能够用的上,主要看key使用的是哪个索引</p>
+<p>（3）看一下rows扫描行数是不是很大</p>
+<p>四.可以使用存储过程，减少编译时间</p>
+<p><strong>Null和空值的区别，如何提取出来</strong></p>
+<p>空值在SQL中不占内存空间,而NULL值会分配内存空间</p>
+<p>SQL中Count()求和,对NULL值会自动忽略而空值会记录一笔资料.</p>
+<p>定义为NOT NULL的字段只能插入空值，不能插入null值，而NULL字段可以插入空值，也可以插入null值</p>
+<p>判断NULL 用IS NULL 或者 is not null,SQL 语句函数中可以使用ifnull()函数来进行处理，判断空字符用 =”或者 &lt;&gt;”来进行处理</p>
+<p>当使用ORDER BY时，首先呈现NULL值。如果你用DESC以降序排序，NULL值最后显示。当使用GROUP BY时，所有的NULL值被认为是相等的，故只显示一行。</p>
+<p><strong>count(1)、count(*)和count(字段名)执行效果上的区别</strong></p>
+<p>count(*)包括了所有的列，相当于行数，在统计结果的时候，不会忽略列值为NULL</p>
+<p>count(1)包括了忽略所有列，用1代表代码行，在统计结果的时候，不会忽略列值为NULL</p>
+<p>count(列名)只包括列名那一列，在统计结果的时候，会忽略列值为空（这里的空不是只空字符串或者0，而是表示null）的计数，即某个字段值为NULL时，不统计。</p>
+<p><strong>大表查询慢如何解决</strong></p>
+<p>1、 合理建立索引，通常查询利用到索引比不用索引更快；</p>
+<p>2、 通过分库分表的方式进行优化，主要有垂直拆分和水平拆分。对关键字段建立水平分区，比如时间字段，若查询条件往往通过时间范围来进行查询，能提升不少性能；</p>
+<p>3、 根据查询建立对应的表，定时对重复的记录进行压缩转存至新表，粒度变大，数据记录变少<strong>。</strong>在表的命名上体现查询条件增加查询速度</p>
+<p>4、 读写分离： 经典的数据库拆分方案，主库负责写，从库负责读；</p>
+<h4 id="sql_3">经典sql问题</h4>
+<h4 id="n">每个分组中连续出现N次的问题</h4>
+<p>涉及到每个，要想到用分组或者窗口函数，例如：</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">       </span><span class="n">rank</span><span class="p">()</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">球队</span><span class="w"> </span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">                   </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">得分时间</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="err">排名</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="k">from</span><span class="w"> </span><span class="err">分数表</span><span class="p">;</span>
+</span></code></pre></div>
+<p>如何用SQL实现上述错位两列的效果呢？</p>
+<p>可以用窗口函数<strong>lag或者lead：</strong></p>
+<blockquote>
+<p>向上窗口函数lead：取出字段名所在的列，<strong>向上</strong>N行的数据，作为独立的列</p>
+<p>向下窗口函数lag：取出字段名所在的列，<strong>向下</strong>N行的数据，作为独立的列</p>
+</blockquote>
+<p>窗口函数语法如下：</p>
+<blockquote>
+<p>lag(字段名,N,默认值) over(partion by …order by …)</p>
+<p>lead(字段名,N,默认值) over(partion by …order by …)</p>
+</blockquote>
+<p>默认值是指，当向上N行或者向下N行值时，如果已经超出了表行和列的范围时，会将这个默认值作为函数的返回值，若没有指定默认值，则返回Null。</p>
+<p>例如，要求连续出现三次的值，分别得到向上偏移一行和两行的列</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">select</span><span class="w"> </span><span class="err">球员姓名</span><span class="p">,</span><span class="w">       </span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="n">lead</span><span class="p">(</span><span class="err">球员姓名</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">球队</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">得分时间</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="err">姓名</span><span class="mi">1</span><span class="p">,</span><span class="w">       </span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="n">lead</span><span class="p">(</span><span class="err">球员姓名</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">球队</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">得分时间</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="err">姓名</span><span class="mi">2</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="k">from</span><span class="w"> </span><span class="err">分数表</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="err">球员姓名</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="k">from</span><span class="p">(</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="err">球员姓名</span><span class="p">,</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">    </span><span class="n">lead</span><span class="p">(</span><span class="err">球员姓名</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">球队</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">得分时间</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="err">姓名</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">    </span><span class="n">lead</span><span class="p">(</span><span class="err">球员姓名</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">球队</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">得分时间</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="err">姓名</span><span class="mi">2</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="err">分数表</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">a</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="k">where</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="err">球员姓名</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="err">姓名</span><span class="mi">1</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="err">球员姓名</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="err">姓名</span><span class="mi">2</span><span class="p">);</span>
+</span></code></pre></div>
+<p>另一种解法，参考力扣180题：新增一列使num列分区按照id排序；和id列序号相减的差相等说明是连续出现的数</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">num</span><span class="w"> </span><span class="n">ConsecutiveNums</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="k">from</span><span class="w"> </span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="p">(</span>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">row_number</span><span class="p">()</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">row_number</span><span class="p">()</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">Num</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">id</span><span class="p">))</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">minus</span><span class="w"> </span>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">Logs</span><span class="w"> </span>
+</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="w"> </span>
+</span><span id="__span-43-7"><a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">Num</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">minus</span><span class="w"> </span>
+</span><span id="__span-43-8"><a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a><span class="k">having</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">;</span>
+</span></code></pre></div>
 
 
 
