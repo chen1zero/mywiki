@@ -1,0 +1,11 @@
+site_name: My Docs
+theme:
+  name: 'material'
+nav:
+- 主页: index.md
+- 知识库:
+    - sql: documents/sql.md
+    - 排序算法: documents/algorithm.md
+- 备忘录:
+    - 一些喜欢的时刻: memo/share.md
+
