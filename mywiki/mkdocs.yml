@@ -20,6 +20,7 @@ nav:
     - 计算机网络: documents/network.md
     - leetcode: documents/leetcode.md
     - git: documents/git.md
+    - linux: documents/linux.md
 - 备忘录:
     - 一些喜欢的时刻: memo/share.md
     - 26.0 记: memo/26.0.md
