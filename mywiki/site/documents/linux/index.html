@@ -1,0 +1,1350 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../git/">
+      
+      
+        <link rel="next" href="../../memo/share/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
+    
+    
+      
+        <title>linux - My Space</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vim" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Space" class="md-header__button md-logo" aria-label="My Space" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Space
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Space" class="md-nav__button md-logo" aria-label="My Space" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Space
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    知识库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            知识库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    排序算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datastructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leetcode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    leetcode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    linux
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    linux
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    vim编辑器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    文件目录指令
+  </a>
+  
+    <nav class="md-nav" aria-label="文件目录指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    cd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwd" class="md-nav__link">
+    pwd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    ls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tree" class="md-nav__link">
+    tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir" class="md-nav__link">
+    mkdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rmdir" class="md-nav__link">
+    rmdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    rm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    cp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    scp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    mv
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    查看文件内容
+  </a>
+  
+    <nav class="md-nav" aria-label="查看文件内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    grep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sed" class="md-nav__link">
+    sed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    cat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more" class="md-nav__link">
+    more
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less" class="md-nav__link">
+    less
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headtail" class="md-nav__link">
+    head/tail
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    文件搜索
+  </a>
+  
+    <nav class="md-nav" aria-label="文件搜索">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locate" class="md-nav__link">
+    locate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whereis" class="md-nav__link">
+    whereis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which" class="md-nav__link">
+    which
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    文件权限
+  </a>
+  
+    <nav class="md-nav" aria-label="文件权限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chmod" class="md-nav__link">
+    chmod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown" class="md-nav__link">
+    chown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chgrp" class="md-nav__link">
+    chgrp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    打包和压缩文件
+  </a>
+  
+    <nav class="md-nav" aria-label="打包和压缩文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zipunzip" class="md-nav__link">
+    zip/unzip
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    进程相关
+  </a>
+  
+    <nav class="md-nav" aria-label="进程相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    ps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pstree" class="md-nav__link">
+    pstree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netstat" class="md-nav__link">
+    netstat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgrep" class="md-nav__link">
+    pgrep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill" class="md-nav__link">
+    kill
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    备忘录
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            备忘录
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../memo/share/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    一些喜欢的时刻
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../memo/26.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    26.0 记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    vim编辑器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    文件目录指令
+  </a>
+  
+    <nav class="md-nav" aria-label="文件目录指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    cd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwd" class="md-nav__link">
+    pwd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    ls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tree" class="md-nav__link">
+    tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir" class="md-nav__link">
+    mkdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rmdir" class="md-nav__link">
+    rmdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    rm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    cp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    scp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    mv
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    查看文件内容
+  </a>
+  
+    <nav class="md-nav" aria-label="查看文件内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    grep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sed" class="md-nav__link">
+    sed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    cat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more" class="md-nav__link">
+    more
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less" class="md-nav__link">
+    less
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headtail" class="md-nav__link">
+    head/tail
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    文件搜索
+  </a>
+  
+    <nav class="md-nav" aria-label="文件搜索">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locate" class="md-nav__link">
+    locate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whereis" class="md-nav__link">
+    whereis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which" class="md-nav__link">
+    which
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    文件权限
+  </a>
+  
+    <nav class="md-nav" aria-label="文件权限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chmod" class="md-nav__link">
+    chmod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown" class="md-nav__link">
+    chown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chgrp" class="md-nav__link">
+    chgrp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    打包和压缩文件
+  </a>
+  
+    <nav class="md-nav" aria-label="打包和压缩文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zipunzip" class="md-nav__link">
+    zip/unzip
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    进程相关
+  </a>
+  
+    <nav class="md-nav" aria-label="进程相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    ps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pstree" class="md-nav__link">
+    pstree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netstat" class="md-nav__link">
+    netstat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgrep" class="md-nav__link">
+    pgrep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill" class="md-nav__link">
+    kill
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>linux</h1>
+
+<h3 id="vim">vim编辑器</h3>
+<p>包括普通模式、插入模式和命令模式    </p>
+<p>普通模式，用户可以使用快捷键进行文件的复制、删除、粘贴等操作    </p>
+<p>插入模式，按下 i 键进入插入模式，用户可以编辑文本内容，按 Esc 键退出插入模式回到普通模式  </p>
+<p>命令模式，按下 : 或者 / 进入命令模式，如保存文件（:w）、退出不保存（:q）、强制退出不保存（:q!）或保存并退出（:wq）  </p>
+<p>x,X : 在一行中，x为向后删除一个字符（相当于del键），X为向前删除一个字符（相当于backspace键）  </p>
+<p>dd : 删除光标所在的那一整行  </p>
+<p>ndd : n 为数字。从光标开始，删除向下n列  </p>
+<p>yy : 复制光标所在的那一行  </p>
+<p>nyy : n为数字。复制光标所在的向下n行  </p>
+<p>p,P : p 为将已复制的数据粘贴到光标的下一行，P则为贴在光标的上一行  </p>
+<p>u : 复原前一个操作  </p>
+<p>CTRL + r : 重做上一个操作  </p>
+<p>小数点 ‘.’：重复前一个动作  </p>
+<p>:set number :在每一行设置行标号  </p>
+<p>:n1,n2 m n3 移动n1-n2行(包括n1,n2)到n3行之下  </p>
+<p>:n1,n2 co n3 复制n1-n2行(包括n1,n2)到n3行之下  </p>
+<p>:n1,n2 d 删除n1-n2行(包括n1,n2)行  </p>
+<h3 id="_1">文件目录指令</h3>
+<h4 id="cd">cd</h4>
+<p>cd 文件路径  用于切换当前目录，可以是绝对路径和相对路径  </p>
+<p>cd /home 进入 ‘/ home’ 目录  </p>
+<p>cd .. 返回上一级目录  </p>
+<p>cd ../.. 返回上两级目录  </p>
+<p>cd / 返回根目录  </p>
+<p>cd - 返回上次所在的目录  </p>
+<h4 id="pwd">pwd</h4>
+<p>pwd 显示当前工作路径  </p>
+<h4 id="ls">ls</h4>
+<p>ls 查看目录中的文件  </p>
+<p>ls -l 显示文件和目录的详细信息    </p>
+<p>ls -a 列出全部文件，含隐藏文件    </p>
+<p>ls -S 按照文件或目录大小排序  </p>
+<h4 id="tree">tree</h4>
+<p>tree 查看⽂件和⽬录的树形结构 （如果没有需要先安装 yum install tree）  </p>
+<h4 id="mkdir">mkdir</h4>
+<p>mkdir &lt;目录名&gt; 创建目录  </p>
+<p>mkdir dir1 dir2 同时创建两个目录  </p>
+<p>mkdir -p /tmp/dir1/dir2 递归创建目录树  </p>
+<h4 id="rmdir">rmdir</h4>
+<p>rmdir dir1 删除’dir1’⽬录，只能删除空目录  </p>
+<h4 id="rm">rm</h4>
+<p>-f ：即force强制删除  </p>
+<p>-i ：互动模式，在删除前会询问用户是否操作  </p>
+<p>-r ：递归删除，常用于目录删除  </p>
+<p>rm -f file1 删除’file1’⽂件  </p>
+<p>rm -rf dir1 删除’dir1’⽬录和其内容  </p>
+<p>rm -rf dir1 dir2 同时删除两个⽬录及其内容  </p>
+<h4 id="cp">cp</h4>
+<p>-a 复制文件，保留文件属性  </p>
+<p>-r 递归持续复制，用于目录的复制  </p>
+<p>-u 目标文件与源文件有差异时才会复制 </p>
+<p>cp -a dir1 dir2 复制目录  </p>
+<p>cp -a /temp/dir1 . 复制一个目录至当前目录  </p>
+<h4 id="scp">scp</h4>
+<p>用于不同主机之间复制文件</p>
+<p>scp local_file remote_username@remote_ip:remote_folder 从本地复制到远程主机  </p>
+<p>scp remote_username@remote_ip:remote_file local_folder 从远程主机复制到本地  </p>
+<p>scp <strong>-r</strong> local_folder remote_username@remote_ip:remote_folder 拷贝整个目录到远程主机  </p>
+<h4 id="mv">mv</h4>
+<p>-f  也即force强制，如果目标文件已经存在，不会询问而直接覆盖<br />
+-i 若目标文件已经存在，就会询问是否覆盖<br />
+-u 若目标文件已经存在，且比目标文件新，才会更新<br />
+mv old_dir new_dir 重命名/移动⽬录  </p>
+<h3 id="_2">查看文件内容</h3>
+<h4 id="awk">awk</h4>
+<p>对文件进行指定规则浏览和抽取信息，可用于<strong>日志分析 </strong> </p>
+<p>awk '{print $0}' file.txt 打印文件所有行  </p>
+<p>awk '{print $1, $3}' file.txt  打印文件中每行的第一和第三个字段  </p>
+<p>awk '$3 &gt; 50 {print $1, $3}' file.txt  基于过滤条件打印，打印第三字段大于50的行的第一和第三字段‌  </p>
+<p>awk '{print NR, $0}' file.txt  NR是内置变量表示行号，打印每行的行号和该行的内容‌  </p>
+<p>awk -F : '{print $1}' /etc/passwd  使用冒号作为分隔符打印<code>/etc/passwd</code>文件中第一个字段  </p>
+<p>awk 'NR%2==0' filename 提取偶数行  </p>
+<p>awk 'NR%2==1' filename 提取奇数行  </p>
+<h4 id="grep">grep</h4>
+<p>grep ss hello.txt 在⽂件hello.txt中查找关键词 ss  </p>
+<p>grep ^s hello.txt 在⽂件hello.txt中查找以 s 开头的内容  </p>
+<p>grep [0-9] hello.txt 选择hello.txt⽂件中所有包含数字的⾏    </p>
+<p>grep -r "text" /path/to/search  在目录下递归搜索包含text的文件</p>
+<h4 id="sed">sed</h4>
+<p>用于文本替换、删除、插入和打印</p>
+<p>sed 's/old/new/' file.txt 替换命令s, 将文本中old字符串替换为new字符串  </p>
+<p>sed '2d' file.txt 删除命令d，删除文件中第二行</p>
+<p>sed '3i\new line' file.txt 插入命令i，第3行之前插入new line</p>
+<p>sed -n '3p' /etc/passwd 打印命令p，打印文件第3行</p>
+<p>sed -n '2,5p' /etc/passwd 打印文件第2到5行</p>
+<h4 id="cat">cat</h4>
+<p>cat file 查看整个文件的内容  </p>
+<p>cat -n file 查看文件内容，并给每一行加上行号  </p>
+<p>cat file.txt | awk ‘NR%2==1’ 提取文件奇数行  </p>
+<h4 id="more">more</h4>
+<p>more file   分页显示文件内容  </p>
+<p>可以使用空格键或Enter键向下翻页，使用b键向上翻页，但无法使用上下箭头键或Page Up/Down键进行翻页  </p>
+<p>q退出</p>
+<p>more‌适合于查看较小的文件或不需要频繁翻页的情况，因为它会在启动时加载整个文件  </p>
+<h4 id="less">less</h4>
+<p>less file  类似 more 命令，分页显示文件内容  </p>
+<p>可以使用空格键、Enter键向下翻页，使用b键向上翻页，还可以使用上下箭头键或Page Up/Down键进行翻页  </p>
+<p>q退出  </p>
+<p>‌less‌适合于查看较大的文件或需要频繁翻页和搜索的情况，因为它不需要一次性加载整个文件，加载速度更快  </p>
+<h4 id="headtail">head/tail</h4>
+<p>head -n 2 file1 查看一个文件的前两行  </p>
+<p>tail -n 2 file1 查看一个文件的最后两行  </p>
+<p>tail -n +1000 file1 从1000行开始显示，显示1000行以后的  </p>
+<p>tail -f /log/msg 实时查看添加到⽂件中的内容  </p>
+<p>cat filename | head -n 3000 | tail -n +1000 显示1000行到3000行  </p>
+<p>cat filename | tail -n +3000 | head -n 1000 从第3000行开始，显示1000(即显示3000~3999行)  </p>
+<h3 id="_3">文件搜索</h3>
+<h4 id="find">find</h4>
+<p>find / -name file 从根目录开始搜索文件/目录<br />
+find / -user user1 搜索用户 user1 的文件/目录<br />
+find /dir -name .bin 在目录/dir 中搜索带有 .bin 后缀的文件<br />
+find /usr/bin -type f -atime +100 搜索在过去100天内未被使用过的执行文件<br />
+find /usr/bin -type f -mtime -10 搜索在10天内被创建或者修改过的文件  </p>
+<h4 id="locate">locate</h4>
+<p>locate *.mp4 寻找 .mp4结尾的文件 通过索引数据库检索</p>
+<h4 id="whereis">whereis</h4>
+<p>whereis 关键词  whereis 主要是针对 /bin /sbin 下面的可执行文件来查找</p>
+<h4 id="which">which</h4>
+<p>which 默认是找 环境变量PATH 内所规范的目录</p>
+<h3 id="_4">文件权限</h3>
+<h4 id="chmod">chmod</h4>
+<p>chmod 777 文件名 修改文件权限（最高权限）<br />
+chmod ugo+rwx dir 设置目录的所有人(u)、群组(g)以及其他人(o)以读（r，4 ）、写(w，2)和执行(x，1)的权限<br />
+chmod go-rwx dir1 删除群组(g)与其他人(o)对目录的读写执行权限<br />
+chmod +x 文件路径 为所有者、所属组和其他用户添加执行的权限<br />
+chmod -x 文件路径 为所有者、所属组和其他用户删除执行的权限<br />
+chmod u+x 文件路径 为所有者添加执行的权限<br />
+chmod g+x 文件路径 为所属组添加执行的权限<br />
+chmod o+x 文件路径 为其他用户添加执行的权限<br />
+chmod ug+x 文件路径 为所有者、所属组添加执行的权限<br />
+chmod =wx 文件路径 为所有者、所属组和其他用户添加写、执行的权限，取消读权限<br />
+chmod ug=wx 文件路径 为所有者、所属组添加写、执行的权限，取消读权限  </p>
+<h4 id="chown">chown</h4>
+<p>chown user file 改变文件所有者  </p>
+<p>chown -R user dir 改变目录的所有者并同时改变目录下所有文件的所有者  </p>
+<p>chown user1:group1 file1 改变一个文件的所有者和所属组  </p>
+<h4 id="chgrp">chgrp</h4>
+<p>chgrp group1 file1 改变文件的群组  </p>
+<h3 id="_5">打包和压缩文件</h3>
+<h4 id="zipunzip">zip/unzip</h4>
+<p>zip file1.zip file1 创建一个zip格式的压缩包  </p>
+<p>unzip file1.zip 解压一个zip格式压缩包  </p>
+<p>zip -r file1.zip file1 file2 dir1 将几个文件和目录同时压缩成一个zip格式的压缩包  </p>
+<h3 id="_6">进程相关</h3>
+<h4 id="ps">ps</h4>
+<p>ps -ef  显示所有进程的详细信息  </p>
+<p>ps aux 类似ps -ef  </p>
+<p>ps -ef | grep 进程名</p>
+<h4 id="pstree">pstree</h4>
+<p>pstree -aup  查看正在运行的进程，树状结构显示  </p>
+<h4 id="netstat">netstat</h4>
+<p>netstat -lntp  查看进程和使用的端口号  </p>
+<p>netstat -a 列出所有连接</p>
+<h4 id="pgrep">pgrep</h4>
+<p>pgrep  进程名称  专门用于进程查询的grep  </p>
+<h4 id="kill">kill</h4>
+<p>kill pid 正常杀死进程</p>
+<p>kill -9 pid   -9表示强制杀死进程 </p>
+<p>kill -9 程序的名字  </p>
+<p>pkill 程序的名字  pkill=pgrep + kill 找到并杀死进程  </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>

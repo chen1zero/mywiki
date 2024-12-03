@@ -69,15 +69,15 @@ git checkout 检出分支或文件——**危险操作，会重写工作区，�
 
 git checkout 分支名称如dev   将工作目录切换到dev分支，并更新本地代码库为该分支的最新状态‌  
 
-git checkout <commit_id> <file_path>  将指定文件恢复到上一版本的状态‌  
+git checkout commit_id file_path  将指定文件恢复到上一版本的状态‌  
 
 怎么理解检出：  
 
-git checkout <file_path> 检出的默认是从暂存区检出，用暂存区的文件覆盖工作区的文件，**撤销工作区的更改**  
+git checkout file_path 检出的默认是从暂存区检出，用暂存区的文件覆盖工作区的文件，**撤销工作区的更改**  
 
-git checkout <commit_id> <file_path>  如果＜commit_id＞不省略，则是用指定提交中的文件覆盖暂存区和工作区中对应的文件  
+git checkout commit_id file_path  如果＜commit_id＞不省略，则是用指定提交中的文件覆盖暂存区和工作区中对应的文件  
 
-git checkout <commit_id> <file_path>  这种用法不会改变HEAD头指针，因为只有HEAD切换到一个分支才可以对提交进行跟踪，否则会进入“分离头指针”的状态。在“分离头指针”状态下的提交不能被引用关联到，可能丢失  
+git checkout commit_id file_path 这种用法不会改变HEAD头指针，因为只有HEAD切换到一个分支才可以对提交进行跟踪，否则会进入“分离头指针”的状态。在“分离头指针”状态下的提交不能被引用关联到，可能丢失  
 
 git checkout 分支名称branch   检出branch分支，包含三步：更新HEAD以指向branch分支、用branch指向的树更新暂存区、更新工作区  
 
