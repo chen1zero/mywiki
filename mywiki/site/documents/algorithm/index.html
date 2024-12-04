@@ -58,12 +58,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="orange">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -114,6 +118,30 @@
       </div>
     </div>
     
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
       
     
     
@@ -298,6 +326,26 @@
   
   <span class="md-ellipsis">
     sql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go
   </span>
   
 
@@ -690,131 +738,222 @@
 <li>比较相邻的元素。如果前一个元素比后一个元素大，就交换这两个元素的位置。</li>
 <li>从开始到结尾对每一对相邻元素重复步骤1。最终最后位置的元素就是最大值。</li>
 </ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="sd">冒泡排序 </span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">O(N^2)</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">def</span> <span class="nf">bubblesort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>    <span class="c1">#n-1趟比较交换</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            <span class="k">if</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&gt;</span><span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">alist</span><span class="o">=</span><span class="p">[</span><span class="mi">54</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">bubblesort</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
-</span></code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="sd">冒泡排序改进:如果某趟比对过程中没有发生过交换，说明已经排好序了，可以提前结束算法</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">def</span> <span class="nf">shortbubblesort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">i</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="c1">#n-1趟比较交换</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">exchange</span><span class="o">=</span><span class="kc">True</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">while</span> <span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">exchange</span><span class="p">:</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">exchange</span><span class="o">=</span><span class="kc">False</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            <span class="k">if</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&gt;</span><span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>                <span class="n">exchange</span><span class="o">=</span><span class="kc">True</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
-</span></code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-0-2"><span class="sd">冒泡排序 </span>
+</span><span id="__span-0-3"><span class="sd">O(N^2)</span>
+</span><span id="__span-0-4"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-0-5"><span class="k">def</span> <span class="nf">bubblesort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
+</span><span id="__span-0-6">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>    <span class="c1">#n-1趟比较交换</span>
+</span><span id="__span-0-7">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+</span><span id="__span-0-8">            <span class="k">if</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&gt;</span><span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+</span><span id="__span-0-9">                <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</span><span id="__span-0-10">
+</span><span id="__span-0-11"><span class="n">alist</span><span class="o">=</span><span class="p">[</span><span class="mi">54</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
+</span><span id="__span-0-12"><span class="n">bubblesort</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+</span><span id="__span-0-13"><span class="nb">print</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-1-2"><span class="sd">冒泡排序改进:如果某趟比对过程中没有发生过交换，说明已经排好序了，可以提前结束算法</span>
+</span><span id="__span-1-3"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-1-4"><span class="k">def</span> <span class="nf">shortbubblesort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
+</span><span id="__span-1-5">    <span class="n">i</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="c1">#n-1趟比较交换</span>
+</span><span id="__span-1-6">    <span class="n">exchange</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-1-7">    <span class="k">while</span> <span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">exchange</span><span class="p">:</span>
+</span><span id="__span-1-8">        <span class="n">exchange</span><span class="o">=</span><span class="kc">False</span>
+</span><span id="__span-1-9">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+</span><span id="__span-1-10">            <span class="k">if</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&gt;</span><span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+</span><span id="__span-1-11">                <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</span><span id="__span-1-12">                <span class="n">exchange</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-1-13">        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+</span></code></pre></div></td></tr></table></div>
 <h2 id="_3">选择排序</h2>
 <p>排序原理：
 1.每一次遍历的过程中，都假定最后一个索引处的元素是最大值，和其他索引处的值依次进行比较，如果当前索引处的值小于其他某个索引处的值，则假定其他某个索引出的值为最大值，最后可以找到最大值所在的索引
 2.交换最后一个索引处和最大值所在的索引处的值</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="sd">选择排序；每趟仅进行一次交换，记录最大项所在的位置，最后再跟本趟最后一项交换</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">O(N^2)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">def</span> <span class="nf">selectionsort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="n">maxpos</span><span class="o">=</span><span class="n">i</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            <span class="k">if</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&gt;</span><span class="n">alist</span><span class="p">[</span><span class="n">maxpos</span><span class="p">]:</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>                <span class="n">maxpos</span><span class="o">=</span><span class="n">j</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="n">alist</span><span class="p">[</span><span class="n">maxpos</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">maxpos</span><span class="p">]</span>
-</span></code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-2-2"><span class="sd">选择排序；每趟仅进行一次交换，记录最大项所在的位置，最后再跟本趟最后一项交换</span>
+</span><span id="__span-2-3"><span class="sd">O(N^2)</span>
+</span><span id="__span-2-4"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-2-5"><span class="k">def</span> <span class="nf">selectionsort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
+</span><span id="__span-2-6">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-2-7">        <span class="n">maxpos</span><span class="o">=</span><span class="n">i</span>
+</span><span id="__span-2-8">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+</span><span id="__span-2-9">            <span class="k">if</span> <span class="n">alist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&gt;</span><span class="n">alist</span><span class="p">[</span><span class="n">maxpos</span><span class="p">]:</span>
+</span><span id="__span-2-10">                <span class="n">maxpos</span><span class="o">=</span><span class="n">j</span>
+</span><span id="__span-2-11">        <span class="n">alist</span><span class="p">[</span><span class="n">maxpos</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">maxpos</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
 <h2 id="_4">插入排序</h2>
 <p>排序原理：
 1.把所有的元素分为两组，已经排序的和未排序的；
 2.找到未排序的组中的第一个元素，向已经排序的组中进行插入；
 3.倒叙遍历已经排序的元素，依次和待插入的元素进行比较，直到找到一个元素小于等于待插入元素，那么就把待
 插入元素放到这个位置，其他的元素向后移动一位；</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="sd">插入排序</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="sd">O(N^2)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">def</span> <span class="nf">insertionsort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)):</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="n">currentvalue</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="n">pos</span> <span class="o">=</span> <span class="n">i</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="k">while</span> <span class="n">pos</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>            <span class="k">if</span> <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="n">currentvalue</span><span class="p">:</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1">#比对移动,不断找新项的插入位置</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>                <span class="k">break</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span><span class="o">=</span><span class="n">currentvalue</span>            <span class="c1">#插入新项</span>
-</span></code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-3-2"><span class="sd">插入排序</span>
+</span><span id="__span-3-3"><span class="sd">O(N^2)</span>
+</span><span id="__span-3-4"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-3-5"><span class="k">def</span> <span class="nf">insertionsort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
+</span><span id="__span-3-6">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)):</span>
+</span><span id="__span-3-7">        <span class="n">currentvalue</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-3-8">        <span class="n">pos</span> <span class="o">=</span> <span class="n">i</span>
+</span><span id="__span-3-9">        <span class="k">while</span> <span class="n">pos</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-3-10">            <span class="k">if</span> <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="n">currentvalue</span><span class="p">:</span>
+</span><span id="__span-3-11">                <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1">#比对移动,不断找新项的插入位置</span>
+</span><span id="__span-3-12">                <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-3-13">            <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-3-14">                <span class="k">break</span>
+</span><span id="__span-3-15">        <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span><span class="o">=</span><span class="n">currentvalue</span>            <span class="c1">#插入新项</span>
+</span></code></pre></div></td></tr></table></div>
 <h2 id="_5">希尔排序</h2>
 <p>希尔排序是插入排序的一种，又称“缩小增量排序”，是插入排序算法的一种更高效的改进版本。</p>
 <p>排序原理：
 1.选定一个增长量h，按照增长量h作为数据分组的依据，对数据进行分组；h一般从N/2开始，每趟减半直到1
 2.对分好组的每一组数据完成插入排序；
 3.减小增长量，最小减为1，重复第二步操作。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="sd">希尔排序</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">def</span> <span class="nf">shellsort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">gap</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="k">while</span> <span class="n">gap</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="k">for</span> <span class="n">startpos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">gap</span><span class="p">):</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>            <span class="n">gapinsertionsort</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">startpos</span><span class="p">,</span> <span class="n">gap</span><span class="p">)</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="n">gap</span> <span class="o">=</span> <span class="n">gap</span><span class="o">//</span><span class="mi">2</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="k">def</span> <span class="nf">gapinsertionsort</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">startpos</span><span class="p">,</span> <span class="n">gap</span><span class="p">):</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">startpos</span><span class="o">+</span><span class="n">gap</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">),</span> <span class="n">gap</span><span class="p">):</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        <span class="n">pos</span> <span class="o">=</span> <span class="n">i</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="n">currentvalue</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        <span class="k">while</span> <span class="n">pos</span> <span class="o">&gt;</span> <span class="n">startpos</span><span class="p">:</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>            <span class="k">if</span> <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="o">-</span><span class="n">gap</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">currentvalue</span><span class="p">:</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>                <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="o">-</span><span class="n">gap</span><span class="p">]</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>                <span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span><span class="o">-</span><span class="n">gap</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>                <span class="k">break</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">currentvalue</span>
-</span></code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-4-2"><span class="sd">希尔排序</span>
+</span><span id="__span-4-3"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-4-4"><span class="k">def</span> <span class="nf">shellsort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
+</span><span id="__span-4-5">    <span class="n">gap</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+</span><span id="__span-4-6">    <span class="k">while</span> <span class="n">gap</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-4-7">        <span class="k">for</span> <span class="n">startpos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">gap</span><span class="p">):</span>
+</span><span id="__span-4-8">            <span class="n">gapinsertionsort</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">startpos</span><span class="p">,</span> <span class="n">gap</span><span class="p">)</span>
+</span><span id="__span-4-9">        <span class="n">gap</span> <span class="o">=</span> <span class="n">gap</span><span class="o">//</span><span class="mi">2</span>
+</span><span id="__span-4-10"><span class="k">def</span> <span class="nf">gapinsertionsort</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">startpos</span><span class="p">,</span> <span class="n">gap</span><span class="p">):</span>
+</span><span id="__span-4-11">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">startpos</span><span class="o">+</span><span class="n">gap</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">),</span> <span class="n">gap</span><span class="p">):</span>
+</span><span id="__span-4-12">        <span class="n">pos</span> <span class="o">=</span> <span class="n">i</span>
+</span><span id="__span-4-13">        <span class="n">currentvalue</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
+</span><span id="__span-4-14">        <span class="k">while</span> <span class="n">pos</span> <span class="o">&gt;</span> <span class="n">startpos</span><span class="p">:</span>
+</span><span id="__span-4-15">            <span class="k">if</span> <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="o">-</span><span class="n">gap</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">currentvalue</span><span class="p">:</span>
+</span><span id="__span-4-16">                <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="o">-</span><span class="n">gap</span><span class="p">]</span>
+</span><span id="__span-4-17">                <span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span><span class="o">-</span><span class="n">gap</span>
+</span><span id="__span-4-18">            <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-4-19">                <span class="k">break</span>
+</span><span id="__span-4-20">        <span class="n">alist</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">currentvalue</span>
+</span></code></pre></div></td></tr></table></div>
 <h2 id="_6">归并排序</h2>
 <p>排序原理：
 1.尽可能的一组数据拆分成两个元素相等的子组，并对每一个子组继续拆分，直到拆分后的每个子组的元素个数是
 1为止。
 2.将相邻的两个子组进行合并成一个有序的大组；
 3.不断的重复步骤2，直到最终只有一个组为止。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="sd">归并排序</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="sd">O(NlogN)</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">def</span> <span class="nf">mergesort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>   <span class="c1">#基本结束条件</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="k">return</span> <span class="n">alist</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">lefthalf</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[:</span><span class="n">mid</span><span class="p">]</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">righthalf</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">mid</span><span class="p">:]</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">mergesort</span><span class="p">(</span><span class="n">lefthalf</span><span class="p">)</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">mergesort</span><span class="p">(</span><span class="n">righthalf</span><span class="p">)</span>  <span class="c1">#递归调用</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="c1">###下面将左右两部分的排序结果拉链式交错归并到结果列表中</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">0</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">lefthalf</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">righthalf</span><span class="p">):</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="k">if</span> <span class="n">lefthalf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">righthalf</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>            <span class="n">alist</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">lefthalf</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>            <span class="n">alist</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">righthalf</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">]</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="c1">##归并左半部分剩余项</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">lefthalf</span><span class="p">):</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>        <span class="n">alist</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">lefthalf</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    <span class="c1">##归并右半部分剩余项</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    <span class="k">while</span> <span class="n">j</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">righthalf</span><span class="p">):</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>        <span class="n">alist</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">righthalf</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">]</span>
-</span></code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-5-2"><span class="sd">归并排序</span>
+</span><span id="__span-5-3"><span class="sd">O(NlogN)</span>
+</span><span id="__span-5-4"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-5-5"><span class="k">def</span> <span class="nf">mergesort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
+</span><span id="__span-5-6">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>   <span class="c1">#基本结束条件</span>
+</span><span id="__span-5-7">        <span class="k">return</span> <span class="n">alist</span>
+</span><span id="__span-5-8">    <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+</span><span id="__span-5-9">    <span class="n">lefthalf</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[:</span><span class="n">mid</span><span class="p">]</span>
+</span><span id="__span-5-10">    <span class="n">righthalf</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">mid</span><span class="p">:]</span>
+</span><span id="__span-5-11">    <span class="n">mergesort</span><span class="p">(</span><span class="n">lefthalf</span><span class="p">)</span>
+</span><span id="__span-5-12">    <span class="n">mergesort</span><span class="p">(</span><span class="n">righthalf</span><span class="p">)</span>  <span class="c1">#递归调用</span>
+</span><span id="__span-5-13">    <span class="c1">###下面将左右两部分的排序结果拉链式交错归并到结果列表中</span>
+</span><span id="__span-5-14">    <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">0</span>
+</span><span id="__span-5-15">    <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">lefthalf</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">righthalf</span><span class="p">):</span>
+</span><span id="__span-5-16">        <span class="k">if</span> <span class="n">lefthalf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">righthalf</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+</span><span id="__span-5-17">            <span class="n">alist</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">lefthalf</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span>
+</span><span id="__span-5-18">        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-5-19">            <span class="n">alist</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">righthalf</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">]</span>
+</span><span id="__span-5-20">    <span class="c1">##归并左半部分剩余项</span>
+</span><span id="__span-5-21">    <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">lefthalf</span><span class="p">):</span>
+</span><span id="__span-5-22">        <span class="n">alist</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">lefthalf</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span>
+</span><span id="__span-5-23">    <span class="c1">##归并右半部分剩余项</span>
+</span><span id="__span-5-24">    <span class="k">while</span> <span class="n">j</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">righthalf</span><span class="p">):</span>
+</span><span id="__span-5-25">        <span class="n">alist</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">righthalf</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
 <h2 id="_7">快速排序</h2>
 <p>排序原理：</p>
 <p>1.首先设定一个分界值，通过该分界值将数组分成左右两部分，一般设定分界值为数组的第一个元素；
@@ -829,45 +968,82 @@
 3.再从头部向尾部开始搜索一个比基准值大的元素，搜索到即停止，并记录指针的位置；
 4.交换当前左边指针位置和右边指针位置的元素；
 5.重复2,3,4步骤，直到左边指针的值大于右边指针的值停止。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="sd">快速排序</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="sd">O(NlogN)</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">quicksorthelper</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">def</span> <span class="nf">quicksorthelper</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">):</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="k">if</span> <span class="n">first</span><span class="o">&lt;</span><span class="n">last</span><span class="p">:</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        <span class="n">midpoint</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        <span class="n">quicksorthelper</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">midpoint</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>        <span class="n">quicksorthelper</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">midpoint</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">):</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="n">midvalue</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">first</span><span class="p">]</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="n">leftmark</span> <span class="o">=</span> <span class="n">first</span><span class="o">+</span><span class="mi">1</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="n">rightmark</span> <span class="o">=</span> <span class="n">last</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        <span class="k">while</span> <span class="n">alist</span><span class="p">[</span><span class="n">rightmark</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">midvalue</span><span class="p">:</span>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>            <span class="n">rightmark</span> <span class="o">=</span> <span class="n">rightmark</span> <span class="o">-</span> <span class="mi">1</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>            <span class="k">if</span> <span class="n">rightmark</span> <span class="o">=</span> <span class="n">fitst</span><span class="p">:</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>                <span class="k">break</span>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>        <span class="k">while</span> <span class="n">alist</span><span class="p">[</span><span class="n">leftmark</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">midvalue</span><span class="p">:</span>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>            <span class="n">leftmark</span> <span class="o">=</span> <span class="n">leftmark</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>            <span class="k">if</span> <span class="n">leftmark</span> <span class="o">==</span> <span class="n">last</span><span class="p">:</span>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>                <span class="k">break</span>
-</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>        <span class="k">if</span> <span class="n">leftmark</span> <span class="o">&gt;=</span> <span class="n">rightmark</span><span class="p">:</span>
-</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>            <span class="k">break</span>
-</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>        <span class="k">else</span><span class="err">：</span>
-</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>            <span class="n">alist</span><span class="p">[</span><span class="n">leftmark</span><span class="p">],</span><span class="n">alist</span><span class="p">[</span><span class="n">rightmark</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">rightmark</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">leftmark</span><span class="p">]</span>
-</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>    <span class="n">alist</span><span class="p">[</span><span class="n">first</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">rightmark</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">rightmark</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">first</span><span class="p">]</span>
-</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>    <span class="k">return</span> <span class="n">rightmark</span>
-</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>
-</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="c1">##测试代码</span>
-</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="n">alist</span><span class="o">=</span><span class="p">[</span><span class="mi">54</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
-</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="n">quicksort</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
-</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a><span class="nb">print</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
-</span></code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-6-2"><span class="sd">快速排序</span>
+</span><span id="__span-6-3"><span class="sd">O(NlogN)</span>
+</span><span id="__span-6-4"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-6-5">
+</span><span id="__span-6-6"><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
+</span><span id="__span-6-7">    <span class="n">quicksorthelper</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-6-8">
+</span><span id="__span-6-9"><span class="k">def</span> <span class="nf">quicksorthelper</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">):</span>
+</span><span id="__span-6-10">    <span class="k">if</span> <span class="n">first</span><span class="o">&lt;</span><span class="n">last</span><span class="p">:</span>
+</span><span id="__span-6-11">        <span class="n">midpoint</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
+</span><span id="__span-6-12">        <span class="n">quicksorthelper</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">midpoint</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-6-13">        <span class="n">quicksorthelper</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">midpoint</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
+</span><span id="__span-6-14">
+</span><span id="__span-6-15"><span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">):</span>
+</span><span id="__span-6-16">    <span class="n">midvalue</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">first</span><span class="p">]</span>
+</span><span id="__span-6-17">    <span class="n">leftmark</span> <span class="o">=</span> <span class="n">first</span><span class="o">+</span><span class="mi">1</span>
+</span><span id="__span-6-18">    <span class="n">rightmark</span> <span class="o">=</span> <span class="n">last</span>
+</span><span id="__span-6-19">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-6-20">        <span class="k">while</span> <span class="n">alist</span><span class="p">[</span><span class="n">rightmark</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">midvalue</span><span class="p">:</span>
+</span><span id="__span-6-21">            <span class="n">rightmark</span> <span class="o">=</span> <span class="n">rightmark</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span id="__span-6-22">            <span class="k">if</span> <span class="n">rightmark</span> <span class="o">=</span> <span class="n">fitst</span><span class="p">:</span>
+</span><span id="__span-6-23">                <span class="k">break</span>
+</span><span id="__span-6-24">        <span class="k">while</span> <span class="n">alist</span><span class="p">[</span><span class="n">leftmark</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">midvalue</span><span class="p">:</span>
+</span><span id="__span-6-25">            <span class="n">leftmark</span> <span class="o">=</span> <span class="n">leftmark</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-6-26">            <span class="k">if</span> <span class="n">leftmark</span> <span class="o">==</span> <span class="n">last</span><span class="p">:</span>
+</span><span id="__span-6-27">                <span class="k">break</span>
+</span><span id="__span-6-28">        <span class="k">if</span> <span class="n">leftmark</span> <span class="o">&gt;=</span> <span class="n">rightmark</span><span class="p">:</span>
+</span><span id="__span-6-29">            <span class="k">break</span>
+</span><span id="__span-6-30">        <span class="k">else</span><span class="err">：</span>
+</span><span id="__span-6-31">            <span class="n">alist</span><span class="p">[</span><span class="n">leftmark</span><span class="p">],</span><span class="n">alist</span><span class="p">[</span><span class="n">rightmark</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">rightmark</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">leftmark</span><span class="p">]</span>
+</span><span id="__span-6-32">    <span class="n">alist</span><span class="p">[</span><span class="n">first</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">rightmark</span><span class="p">]</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">rightmark</span><span class="p">],</span> <span class="n">alist</span><span class="p">[</span><span class="n">first</span><span class="p">]</span>
+</span><span id="__span-6-33">    <span class="k">return</span> <span class="n">rightmark</span>
+</span><span id="__span-6-34">
+</span><span id="__span-6-35"><span class="c1">##测试代码</span>
+</span><span id="__span-6-36"><span class="n">alist</span><span class="o">=</span><span class="p">[</span><span class="mi">54</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
+</span><span id="__span-6-37"><span class="n">quicksort</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+</span><span id="__span-6-38"><span class="nb">print</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 <h2 id="_8">堆排序</h2>
 <h2 id="_9">排序算法稳定性</h2>
 <p>稳定性的定义：

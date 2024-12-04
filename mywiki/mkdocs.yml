@@ -47,7 +47,7 @@ nav:
     - git: documents/git.md
     - linux: documents/linux.md
     - sql: documents/sql.md
-    - Go: documents/go.md
+    - Golang: documents/go.md
     - leetcode: documents/leetcode.md
     - 排序算法: documents/algorithm.md
     - 数据结构: documents/datastructure.md
