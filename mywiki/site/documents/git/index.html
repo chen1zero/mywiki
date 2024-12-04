@@ -767,11 +767,11 @@
 <h3 id="git-checkout">git checkout</h3>
 <p>git checkout 检出分支或文件——<strong>危险操作，会重写工作区，慎用 </strong> </p>
 <p>git checkout 分支名称如dev   将工作目录切换到dev分支，并更新本地代码库为该分支的最新状态‌  </p>
-<p>git checkout <commit_id> <file_path>  将指定文件恢复到上一版本的状态‌  </p>
+<p>git checkout commit_id file_path  将指定文件恢复到上一版本的状态‌  </p>
 <p>怎么理解检出：  </p>
-<p>git checkout <file_path> 检出的默认是从暂存区检出，用暂存区的文件覆盖工作区的文件，<strong>撤销工作区的更改</strong>  </p>
-<p>git checkout <commit_id> <file_path>  如果＜commit_id＞不省略，则是用指定提交中的文件覆盖暂存区和工作区中对应的文件  </p>
-<p>git checkout <commit_id> <file_path>  这种用法不会改变HEAD头指针，因为只有HEAD切换到一个分支才可以对提交进行跟踪，否则会进入“分离头指针”的状态。在“分离头指针”状态下的提交不能被引用关联到，可能丢失  </p>
+<p>git checkout file_path 检出的默认是从暂存区检出，用暂存区的文件覆盖工作区的文件，<strong>撤销工作区的更改</strong>  </p>
+<p>git checkout commit_id file_path  如果＜commit_id＞不省略，则是用指定提交中的文件覆盖暂存区和工作区中对应的文件  </p>
+<p>git checkout commit_id file_path 这种用法不会改变HEAD头指针，因为只有HEAD切换到一个分支才可以对提交进行跟踪，否则会进入“分离头指针”的状态。在“分离头指针”状态下的提交不能被引用关联到，可能丢失  </p>
 <p>git checkout 分支名称branch   检出branch分支，包含三步：更新HEAD以指向branch分支、用branch指向的树更新暂存区、更新工作区  </p>
 <p>git checkout branch -- filename 维持HEAD的指向不变。用branch所指向的提交中的filename替换暂存区和工作区中相应的文件。会将暂存区和工作区中的filename文件直接覆盖  </p>
 <p>git checkout 相当于命令后的参数为一个点"."。<strong>这条命令最危险</strong>！会取消所有本地的修改，相当于用暂存区的所有文件直接覆盖本地文件  </p>
