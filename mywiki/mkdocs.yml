@@ -2,21 +2,52 @@ site_name: My Space
 theme:
   name: 'material'
   palette:
-    primary: deep purple
+    # 日间模式
+    - scheme: default
+      # 主颜色
+      # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color
+      primary: deep purple
+      # 链接等可交互元件的高亮色
+      # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#accent-color
+      accent: orange
+      toggle:
+        # 图标
+        icon: material/weather-night
+        # 鼠标悬浮提示
+        name: 切换至夜间模式
+    # 夜间模式
+    - scheme: slate
+      primary: deep purple
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至日间模式
 markdown_extensions:
+  # [代码语法高亮]
   - pymdownx.highlight:
-      anchor_linenums: true
+      # 显示行号
+      linenums: true
+      # 显示编程语言名称
+      auto_title: true
+      # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#+pymdownx.highlight.line_spans
       line_spans: __span
+      # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#+pymdownx.highlight.pygments_lang_class
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  # [数学公式支持]
+  # https://squidfunk.github.io/mkdocs-material/reference/math/#katex
+  - pymdownx.arithmatex:
+      generic: true
+  
 nav:
 - 主页: index.md
 - 知识库:
     - git: documents/git.md
     - linux: documents/linux.md
     - sql: documents/sql.md
+    - Go: documents/go.md
     - leetcode: documents/leetcode.md
     - 排序算法: documents/algorithm.md
     - 数据结构: documents/datastructure.md
