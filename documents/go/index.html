@@ -1,0 +1,1457 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../sql/">
+      
+      
+        <link rel="next" href="../leetcode/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
+    
+    
+      
+        <title>Go - My Space</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#golang" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Space" class="md-header__button md-logo" aria-label="My Space" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Space
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Go
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Space" class="md-nav__button md-logo" aria-label="My Space" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Space
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    知识库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            知识库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Go
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Go
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#go" class="md-nav__link">
+    go的程序结构
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    变量和常量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    数据类型
+  </a>
+  
+    <nav class="md-nav" aria-label="数据类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    切片
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    结构体
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    控制与循环语句
+  </a>
+  
+    <nav class="md-nav" aria-label="控制与循环语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if条件语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    switch语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    select语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    for循环
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    循环控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    并发编程-通道
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    错误处理
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leetcode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    leetcode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    排序算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datastructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    备忘录
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            备忘录
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../memo/share/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    一些喜欢的时刻
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../memo/26.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    26.0 记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#go" class="md-nav__link">
+    go的程序结构
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    变量和常量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    数据类型
+  </a>
+  
+    <nav class="md-nav" aria-label="数据类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    切片
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    结构体
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    控制与循环语句
+  </a>
+  
+    <nav class="md-nav" aria-label="控制与循环语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if条件语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    switch语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    select语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    for循环
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    循环控制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    并发编程-通道
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    错误处理
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="golang">Golang</h1>
+<h3 id="_1">简介</h3>
+<ul>
+<li>
+<p>Go，类C语言，性能和并发处理能力强，编译和运行效率高，在服务器端开发、云计算、分布式系统用途广泛     </p>
+</li>
+<li>
+<p>Go语言没有类和继承的概念，通过结构体和interface实现面向对象，不支持函数重载；    </p>
+</li>
+<li>
+<p>Go语言支持指针，引入协程(goroutine)实现并发，通过Channel实现goroutine间通讯，函数方法支持多个返回值，通过 recover 和 panic 来代替异常机制</p>
+</li>
+</ul>
+<h3 id="go">go的程序结构</h3>
+<p>包含包声明、导入包、函数、语句和表达式、注释  </p>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="c1">// 包声明</span>
+</span><span id="__span-0-2"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+</span><span id="__span-0-3">
+</span><span id="__span-0-4"><span class="c1">// 导入包</span>
+</span><span id="__span-0-5"><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+</span><span id="__span-0-6">
+</span><span id="__span-0-7"><span class="c1">// 函数定义 函数名（参数） 返回值</span>
+</span><span id="__span-0-8"><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><span class="w">    </span><span class="c1">// 表达式</span>
+</span><span id="__span-0-10"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</span><span id="__span-0-11"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="_2">变量和常量</h3>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="c1">// 声明变量，变量名称在前，类型在后，变量声明时可以直接初始化  </span>
+</span><span id="__span-1-2"><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Hello Go&quot;</span>
+</span><span id="__span-1-3"><span class="c1">// 短变量声明并初始化，只能在函数体内使用（这里是举例子没写函数），go语言会进行类型推导</span>
+</span><span id="__span-1-4"><span class="nx">n</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-1-5">
+</span><span id="__span-1-6"><span class="c1">// 声明常量</span>
+</span><span id="__span-1-7"><span class="kd">const</span><span class="w"> </span><span class="nx">pi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">3.1415</span>
+</span><span id="__span-1-8"><span class="kd">const</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.7182</span>
+</span><span id="__span-1-9"><span class="c1">// 或</span>
+</span><span id="__span-1-10"><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-11"><span class="w">    </span><span class="nx">pi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">3.1415</span>
+</span><span id="__span-1-12"><span class="w">    </span><span class="nx">e</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.7182</span>
+</span><span id="__span-1-13"><span class="p">)</span>
+</span><span id="__span-1-14">
+</span><span id="__span-1-15"><span class="c1">//iota常量生成器,iota出现时将被置为0，可以理解为const语句块的行索引</span>
+</span><span id="__span-1-16"><span class="kd">const</span><span class="p">{</span>
+</span><span id="__span-1-17"><span class="w">    </span><span class="nx">a</span><span class="p">=</span><span class="kc">iota</span><span class="w">  </span><span class="c1">//0</span>
+</span><span id="__span-1-18"><span class="w">    </span><span class="nx">b</span><span class="w">       </span><span class="c1">//1</span>
+</span><span id="__span-1-19"><span class="w">    </span><span class="nx">c</span><span class="w">       </span><span class="c1">//2</span>
+</span><span id="__span-1-20"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="_3">数据类型</h3>
+<p>注：go不支持隐式数据类型转换，需显示转换    </p>
+<p>数值型（整型、浮点型、其他数值类型）    </p>
+<p>布尔型    </p>
+<p>字符串型     </p>
+<p>派生型（指针、数组、结构体struct、接口、切片、Map）    </p>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="c1">// 数值型</span>
+</span><span id="__span-2-2"><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-2-3"><span class="kd">var</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="kt">float32</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">12.34</span>
+</span><span id="__span-2-4">
+</span><span id="__span-2-5"><span class="c1">// 布尔型</span>
+</span><span id="__span-2-6"><span class="kd">var</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-2-7"><span class="nx">cBool</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-2-8">
+</span><span id="__span-2-9"><span class="c1">// 字符串型</span>
+</span><span id="__span-2-10"><span class="kd">var</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Hello Go&quot;</span>
+</span><span id="__span-2-11"><span class="kd">var</span><span class="w"> </span><span class="nx">arr1</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span><span class="w"> </span><span class="c1">// 声明了一个int类型的数组</span>
+</span><span id="__span-2-12"><span class="nx">arr2</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="c1">// 声明了一个长度为3的int数组</span>
+</span><span id="__span-2-13"><span class="nx">arr3</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">}</span><span class="w"> </span><span class="c1">// 声明了一个长度为5的int数组,元素是2, 4, 6, 8, 10</span>
+</span><span id="__span-2-14">
+</span><span id="__span-2-15"><span class="c1">// 切片会自动扩容</span>
+</span><span id="__span-2-16"><span class="kd">var</span><span class="w"> </span><span class="nx">mySlice</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="w"> </span><span class="c1">//声明一个int切片</span>
+</span><span id="__span-2-17"><span class="nx">mySlice</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">}</span><span class="w"> </span><span class="c1">// 创建包含6个元素的切片</span>
+</span><span id="__span-2-18"><span class="nx">mySlice</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">}[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">// 创建包含原切片元素1-4的切片</span>
+</span><span id="__span-2-19">
+</span><span id="__span-2-20"><span class="c1">// map类型</span>
+</span><span id="__span-2-21"><span class="kd">var</span><span class="w"> </span><span class="nx">m</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span>
+</span><span id="__span-2-22"><span class="nx">m</span><span class="p">[</span><span class="s">&quot;key1&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="_4">指针</h4>
+<ul>
+<li>
+<p>用&amp;获取变量地址，如&amp;ptr，可赋值给指针  </p>
+</li>
+<li>
+<p>指针类型：基本数据类型前面加<em>号声明指针类型，比如 </em>int    </p>
+</li>
+<li>
+<p>指针取值：对普通变量使用&amp;取地址后会获得这个变量的指针，然后就可以对指针使用*操作进行指针取值    </p>
+</li>
+</ul>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-3-2"><span class="kd">var</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">x</span><span class="w"> </span><span class="c1">// 获取变量x的地址，并赋值给指针p</span>
+</span><span id="__span-3-3"><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;x的值:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="c1">// 输出: x的值: 10</span>
+</span><span id="__span-3-4"><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;p指向的值:&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="c1">// 输出: p指向的值: 10</span>
+</span><span id="__span-3-5"><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;x的地址:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="c1">// 输出x的地址</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="_5">数组</h4>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="c1">// 数组定义</span>
+</span><span id="__span-4-2"><span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span>
+</span><span id="__span-4-3">
+</span><span id="__span-4-4"><span class="c1">// 初始化数组</span>
+</span><span id="__span-4-5"><span class="nx">arr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="_6">切片</h4>
+<ul>
+<li>
+<p>定义切片和定义数组很像，区别就是定义一个切片不需要指定长度；  </p>
+</li>
+<li>
+<p>切片实际上是对底层数组的引用   </p>
+</li>
+<li>
+<p>切片长度指元素个数，切片容量指底层数组的长度  </p>
+</li>
+</ul>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="c1">//切片定义</span>
+</span><span id="__span-5-2"><span class="kd">var</span><span class="w"> </span><span class="nx">s1</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="w"> </span><span class="c1">// 可变长</span>
+</span><span id="__span-5-3">
+</span><span id="__span-5-4"><span class="c1">//从数组创建切片</span>
+</span><span id="__span-5-5"><span class="nx">arr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">}</span>
+</span><span id="__span-5-6"><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="w">  </span><span class="c1">// 从arr数组的第1到第3个元素创建一个切片</span>
+</span><span id="__span-5-7"><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-5-8">
+</span><span id="__span-5-9"><span class="c1">//make函数创建切片</span>
+</span><span id="__span-5-10"><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">    </span><span class="c1">// 创建一个长度为3的切片, 容量默认3</span>
+</span><span id="__span-5-11"><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="c1">// 创建一个长度为3，容量为5的切片</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="map">Map</h4>
+<p>Go语言的map底层实现基于哈希表</p>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><span class="w">    </span><span class="c1">//字面量初始化</span>
+</span><span id="__span-6-3"><span class="w">    </span><span class="nx">test</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span>
+</span><span id="__span-6-4"><span class="w">        </span><span class="s">&quot;测试1&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-6-5"><span class="w">        </span><span class="s">&quot;测试2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-6-6"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-7"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">test</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-8"><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">)</span>
+</span><span id="__span-6-9"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-10"><span class="w">    </span><span class="c1">//使用make初始化map</span>
+</span><span id="__span-6-11"><span class="w">    </span><span class="nx">makeMap</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
+</span><span id="__span-6-12"><span class="w">    </span><span class="nx">makeMap</span><span class="p">[</span><span class="s">&quot;测试3&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span>
+</span><span id="__span-6-13"><span class="w">    </span><span class="nx">makeMap</span><span class="p">[</span><span class="s">&quot;测试4&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span>
+</span><span id="__span-6-14"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">makeMap</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-15"><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">)</span>
+</span><span id="__span-6-16"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-17"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="_7">结构体</h4>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="c1">// 定义</span>
+</span><span id="__span-7-2"><span class="kd">type</span><span class="w"> </span><span class="nx">Person</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-3"><span class="w">    </span><span class="nx">Name</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-7-4"><span class="w">    </span><span class="nx">Age</span><span class="w">  </span><span class="kt">int</span>
+</span><span id="__span-7-5"><span class="w">    </span><span class="nx">Address</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-7-6"><span class="p">}</span>
+</span><span id="__span-7-7">
+</span><span id="__span-7-8"><span class="c1">// 创建结构体实例，可以直接在定义结构体时初始化字段值</span>
+</span><span id="__span-7-9"><span class="nx">p1</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Person</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Age</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="nx">Address</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Beijing&quot;</span><span class="p">}</span>
+</span><span id="__span-7-10">
+</span><span id="__span-7-11"><span class="c1">// 创建结构体实例，可以使用new函数创建一个结构体的指针，然后设置指针的字段值</span>
+</span><span id="__span-7-12"><span class="nx">p2</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">new</span><span class="p">(</span><span class="nx">Person</span><span class="p">)</span>
+</span><span id="__span-7-13"><span class="nx">p2</span><span class="p">.</span><span class="nx">Name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Bob&quot;</span>
+</span><span id="__span-7-14"><span class="nx">p2</span><span class="p">.</span><span class="nx">Age</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">25</span>
+</span><span id="__span-7-15"><span class="nx">p2</span><span class="p">.</span><span class="nx">Address</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Shanghai&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="_8">控制与循环语句</h3>
+<h4 id="if">if条件语句</h4>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="o">==</span><span class="mi">10</span><span class="p">){</span>
+</span><span id="__span-8-2"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;success&quot;</span><span class="p">)</span>
+</span><span id="__span-8-3"><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span id="__span-8-4"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;failed&quot;</span><span class="p">)</span>
+</span><span id="__span-8-5"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="switch">switch语句</h4>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="c1">//switch后面加变量名；switch语句不需要写break，默认带break；case执行完后自动跳出；</span>
+</span><span id="__span-9-2"><span class="k">switch</span><span class="w"> </span><span class="nx">day</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-3"><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-9-4"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;星期一&quot;</span><span class="p">)</span>
+</span><span id="__span-9-5"><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+</span><span id="__span-9-6"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;星期二&quot;</span><span class="p">)</span>
+</span><span id="__span-9-7"><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-9-8"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;星期三&quot;</span><span class="p">)</span>
+</span><span id="__span-9-9"><span class="k">default</span><span class="p">:</span>
+</span><span id="__span-9-10"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;其他&quot;</span><span class="p">)</span>
+</span><span id="__span-9-11"><span class="p">}</span>
+</span><span id="__span-9-12">
+</span><span id="__span-9-13"><span class="c1">//switch使用fallthrough将不跳出循环,后面的语句无条件执行 </span>
+</span><span id="__span-9-14"><span class="k">switch</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-15"><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-9-16"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
+</span><span id="__span-9-17"><span class="w">    </span><span class="k">fallthrough</span>
+</span><span id="__span-9-18"><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+</span><span id="__span-9-19"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">)</span>
+</span><span id="__span-9-20"><span class="w">    </span><span class="k">fallthrough</span>
+</span><span id="__span-9-21"><span class="k">default</span><span class="p">:</span>
+</span><span id="__span-9-22"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="s">&quot;default&quot;</span><span class="p">)</span>
+</span><span id="__span-9-23"><span class="w">    </span><span class="k">fallthrough</span>
+</span><span id="__span-9-24"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="select">select语句</h4>
+<p>select 类似switch，一般专门用于处理通道（channel）的操作</p>
+<p>如果有多个可运行的case会随机选择一个执行，没有case可运行就会阻塞，直到有case可运行；  </p>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="k">select</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//不停的在这里检测</span>
+</span><span id="__span-10-2"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">chanl</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="c1">//检测有没有数据可以读</span>
+</span><span id="__span-10-3"><span class="w">    </span><span class="c1">//如果chanl成功读取到数据，则进行该case处理语句</span>
+</span><span id="__span-10-4"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">chan2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="c1">//检测有没有可以写</span>
+</span><span id="__span-10-5"><span class="w">    </span><span class="c1">//如果成功向chan2写入数据，则进行该case处理语句</span>
+</span><span id="__span-10-6"><span class="w">    </span><span class="c1">//假如没有default，那么在以上两个条件都不成立的情况下，就会在此阻塞</span>
+</span><span id="__span-10-7"><span class="w">    </span><span class="k">default</span><span class="p">:</span>
+</span><span id="__span-10-8"><span class="w">    </span><span class="c1">//如果以上都没有符合条件，那么则进行default处理流程</span>
+</span><span id="__span-10-9"><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="for">for循环</h4>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><span class="c1">// go只有for循环，没有while关键字：</span>
+</span><span id="__span-11-2"><span class="c1">// 标准的for循环语句，初始化变量、循环判断条件，后处理，这三个部分都可以不指定</span>
+</span><span id="__span-11-3"><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-4"><span class="w">   </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+</span><span id="__span-11-5"><span class="p">}</span>
+</span><span id="__span-11-6">
+</span><span id="__span-11-7"><span class="c1">// 类似while循环的使用</span>
+</span><span id="__span-11-8"><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-11-9"><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-10"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+</span><span id="__span-11-11"><span class="w">    </span><span class="nx">i</span><span class="o">++</span>
+</span><span id="__span-11-12"><span class="p">}</span>
+</span><span id="__span-11-13">
+</span><span id="__span-11-14"><span class="c1">// 无限循环</span>
+</span><span id="__span-11-15"><span class="k">for</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-16"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;This loop will run forever.&quot;</span><span class="p">)</span>
+</span><span id="__span-11-17"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>range循环，通常与for循环结合使用，range可以对slice/map/数组、字符串进行迭代循环</p>
+<h4 id="_9">循环控制</h4>
+<ul>
+<li>
+<p>break  中断for/switch/select</p>
+</li>
+<li>
+<p>continue</p>
+</li>
+<li>
+<p>goto   跳转</p>
+</li>
+</ul>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><span class="c1">//for循环加上标签loop,go to loop跳到loop  </span>
+</span><span id="__span-12-2"><span class="nx">Loop</span><span class="p">:</span>
+</span><span id="__span-12-3"><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-4"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+</span><span id="__span-12-5"><span class="w">    </span><span class="nx">i</span><span class="o">++</span>
+</span><span id="__span-12-6"><span class="w">    </span><span class="k">goto</span><span class="w"> </span><span class="nx">Loop</span>
+</span><span id="__span-12-7"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="_10">函数</h3>
+<ul>
+<li>
+<p>函数返回值类型写在最后面，支持多返回值      </p>
+</li>
+<li>
+<p>不能用容器变量接收多返回值，只能用多个变量接收    </p>
+</li>
+<li>
+<p>函数传参默认是值传递    </p>
+</li>
+</ul>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+</span><span id="__span-13-2">
+</span><span id="__span-13-3"><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+</span><span id="__span-13-4">
+</span><span id="__span-13-5"><span class="c1">// 定义一个函数，返回两个数的和和差</span>
+</span><span id="__span-13-6"><span class="kd">func</span><span class="w"> </span><span class="nx">calc</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-7"><span class="w">    </span><span class="nx">sum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span>
+</span><span id="__span-13-8"><span class="w">    </span><span class="nx">diff</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span>
+</span><span id="__span-13-9"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">sum</span><span class="p">,</span><span class="w"> </span><span class="nx">diff</span>
+</span><span id="__span-13-10"><span class="p">}</span>
+</span><span id="__span-13-11">
+</span><span id="__span-13-12"><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-13"><span class="w">    </span><span class="nx">sum</span><span class="p">,</span><span class="w"> </span><span class="nx">diff</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">calc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-13-14"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Sum:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">sum</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Difference:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">diff</span><span class="p">)</span>
+</span><span id="__span-13-15"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="-">并发编程-通道</h3>
+<p>协程goroutine可以理解为轻量级的线程，可以理解为执行并发的子程序  </p>
+<p>通道可以在goroutine之间传递数据，实现数据的同步和共享  </p>
+<ul>
+<li>
+<p>无缓冲通道：直接用 make(chan T) 创建，是默认通道类型</p>
+</li>
+<li>
+<p>缓冲通道：用 make(chan T, capacity) 创建，capacity 是通道的缓冲区大小  </p>
+</li>
+</ul>
+<p>缓冲通道允许在缓冲区未满时发送数据，在未空时接收数据，给通道写入数据时不能超过缓冲区容量  </p>
+<p>通道定义完写入数据、读取数据时缓冲区<strong>类似队列</strong>，数据先入先出   </p>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><span class="c1">// 创建一个字符串类型无缓冲通道</span>
+</span><span id="__span-14-2"><span class="nx">ch</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+</span><span id="__span-14-3">
+</span><span id="__span-14-4"><span class="c1">// 创建一个缓冲容量为 3 的整型通道</span>
+</span><span id="__span-14-5"><span class="nx">ch1</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-14-6">
+</span><span id="__span-14-7"><span class="c1">// 发送数据到通道</span>
+</span><span id="__span-14-8"><span class="nx">ch</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span>
+</span><span id="__span-14-9">
+</span><span id="__span-14-10"><span class="c1">// 从通道接收数据</span>
+</span><span id="__span-14-11"><span class="nx">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">ch</span>
+</span><span id="__span-14-12"><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="_11">错误处理</h3>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><span class="c1">//errors是实现了error接口的类型，用来返回错误信息</span>
+</span><span id="__span-15-2"><span class="kd">func</span><span class="w"> </span><span class="nx">divide</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-3"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-4"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;division by zero&quot;</span><span class="p">)</span>
+</span><span id="__span-15-5"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-6"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span>
+</span><span id="__span-15-7"><span class="p">}</span>
+</span><span id="__span-15-8">
+</span><span id="__span-15-9"><span class="c1">// panic函数用于引发程序中的严重错误，导致程序崩溃;</span>
+</span><span id="__span-15-10"><span class="c1">// recover函数用于在发生panic时进行错误恢复</span>
+</span><span id="__span-15-11"><span class="kd">func</span><span class="w"> </span><span class="nx">readConfig</span><span class="p">(</span><span class="nx">filename</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-12"><span class="w">    </span><span class="c1">//defer语句用于延迟执行函数调用，会在函数执行完毕之后执行，无论函数是正常返回还是发生了错误</span>
+</span><span id="__span-15-13"><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-14"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">recover</span><span class="p">();</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-15"><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Recovered from panic:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">)</span>
+</span><span id="__span-15-16"><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-15-17"><span class="w">    </span><span class="p">}()</span>
+</span><span id="__span-15-18">
+</span><span id="__span-15-19"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stat</span><span class="p">(</span><span class="nx">filename</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-20"><span class="w">        </span><span class="nb">panic</span><span class="p">(</span><span class="s">&quot;config file not found&quot;</span><span class="p">)</span>
+</span><span id="__span-15-21"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-22"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>
